@@ -1,11 +1,11 @@
 body {
   background-color: #FBFBFB;
 }
-h1 h2 h3 h4 h5 h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: Tahoma, Geneva, sans-serif;
 }
-p {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+p, div, a {
+  font-family: "Roboto Slab","Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 .header {
   background-color: #3E6291;
