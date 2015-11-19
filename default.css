@@ -130,6 +130,20 @@ legend {
 }
 
 /*Issue 2*/
+.downvote {
+  font-size: 24px;
+  line-height: 2px;
+  width: 80%;
+  margin-left:10%;
+  margin-right:10%;
+  margin-top: 1px;
+  height: 28px;
+  border: 1px solid #FBFBFB;
+  border-radius: 4px;
+}
+.downvote:hover {
+  border-color: #9FB1CA;
+}
 .excerpt {
   margin-bottom: 0px;
   height: 40px !important;
@@ -149,14 +163,23 @@ legend {
   padding-left: 0px;
 }
 .tallydown {
-  color: red;
+  color: #DC5652;
 }
 .tallyup {
-  color: green;
+  color: #41AD48;
 }
-.votearrows {
-  background-color: FBFBFB;
-  text-align: center;
+.upvote {
+  font-size: 24px;
+  line-height: 2px;
+  height: 28px;
+  width: 80%;
+  margin-left:10%;
+  margin-right:10%;
+  border: 1px solid #FBFBFB;
+  border-radius: 4px;
+}
+.upvote:hover {
+  border-color: #9FB1CA;
 }
 /*
 COLORS
@@ -177,5 +200,11 @@ COLORS
 }
 #darkhue {
   background-color: #002350;
+}
+#green {
+  background-color: #41AD48;
+}
+#red {
+  background-color: #DC5652;
 }
 */
