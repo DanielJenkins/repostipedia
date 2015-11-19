@@ -32,42 +32,50 @@
 </div>
 <div class="row postheader">
   <div class="col-md-12">
-    <div class="form-group topitem">
+    <div class="form-group">
       <label for="posttitle" class="pbold">Post Header:</label>
-      <input type="text" class="form-control" id="entrytitle" placeholder="e.g. Abraham Lincoln is America's Greatest President">
+      <input type="text" class="form-control" id="posttitle" placeholder="e.g. Abraham Lincoln is America's Greatest President">
     </div>
   </div>
 </div>
 <div class="row aboutentry">
   <div class="col-md-12">
     <fieldset>
-      <legend class="h3 subsubtitle">About the Encyclopedia Entry</legend>
+      <legend class="h3 subsubtitle">
+        <div class="thelegend">About the Encyclopedia Entry</div>
+      </legend>
       <div class="row">
-        <div class="col-sm-12 col-md-9">
+        <div class="col-sm-12 col-md-8">
           <div class="form-group">
             <label for="entrytitle" class="pbold">Entry Title:</label>
             <input type="text" class="form-control" id="entrytitle" placeholder="e.g. Abraham Lincoln">
           </div>
-
           <div class="form-group">
-            <label for="entrytitle" class="pbold">Entry URL:</label>
-            <input type="text" class="form-control" id="entrytitle" placeholder="e.g. https://en.wikipedia.org/wiki/Abraham_Lincoln">
+            <label for="entryurl" class="pbold">Entry URL:</label>
+            <input type="text" class="form-control" id="entryurl" placeholder="e.g. https://en.wikipedia.org/wiki/Abraham_Lincoln">
           </div>
         </div>
-
-        <div class="col-sm-12 col-md-3">
-          <p class="pbold entryissues">Issues with This Entry</p>
+        <div class="col-sm-12 col-md-offset-1 col-md-3">
+          <p class="pbold">Issues with This Entry</p>
           <div class="checkbox">
-            <input type="checkbox" name="entryissues" value="incomplete"> Entry is incomplete
+            <label>
+              <input type="checkbox" name="entryissues" value="incomplete"> Entry is incomplete
+            </label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" name="entryissues" value="biased"> Topic is biased
+            <label>
+              <input type="checkbox" name="entryissues" value="biased"> Topic is biased
+            </label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" name="entryissues" value="complex"> Complex/Confusing
+            <label>
+              <input type="checkbox" name="entryissues" value="complex"> Complex/Confusing
+            </label>
           </div>
           <div class="checkbox">
-            <input type="checkbox" name="entryissues" value="notcited"> Poor or missing citations
+            <label>
+              <input type="checkbox" name="entryissues" value="notcited"> Poor or missing citations
+            </label>
           </div>
         </div>
       </div>
@@ -83,17 +91,115 @@
     </fieldset>
   </div>
 </div>
-<div class="row review">
+<div class="row minispacer">
   <div class="col-md-12">
-    <div>Review or summary</div>
+    <p class="pbold">Enter a brief summary, comment, or review regarding the encyclopedia entry:</p>
+    <textarea class="form-control" rows="6" placeholder="e.g. This Wikipedia entry on Abraham Lincoln is a great read! It details everything from his birth in a log cabin through the impact that his actions have on present-day America. Lincoln was truly America's best president, hands-down!"></textarea>
   </div>
 </div>
 <div class="row keywordssubmit">
-  <div class="col-md-12">
-    <div>Keywords and Submit</div>
+  <div class="col-md-9">
+    <div class="form-group">
+      <label for="keywords" class="pbold">Keywords about this post or entry:</label>
+      <input type="email" class="form-control" id="keywords" placeholder="e.g. president, emancipation, greatest president, america">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <button type="submit" class="btn btn-primary btn-lg btn-block postbutton">Post</button>
   </div>
 </div>
 </form>
+
+<div class="row spacer"></div>
+
+
+<!--fortestingonly-->
+<!--Issue 1: Create a New Post-->
+<form action="??????????????????????????" method="post">
+<div class="row">
+  <div class="col-md-12 subtitle">
+    <h1 class="h2 subtitle">Create a New Post</h1>
+  </div>
+</div>
+<div class="row postheader">
+  <div class="col-md-12">
+    <div class="form-group">
+      <label for="posttitle" class="pbold">Post Header:</label>
+      <input type="text" class="form-control" id="posttitle" placeholder="e.g. Abraham Lincoln is America's Greatest President">
+    </div>
+    <p class="pbold">Enter a brief summary, comment, or review regarding the encyclopedia entry:</p>
+    <textarea class="form-control" rows="6" placeholder="e.g. This Wikipedia entry on Abraham Lincoln is a great read! It details everything from his birth in a log cabin through the impact that his actions have on present-day America. Lincoln was truly America's best president, hands-down!"></textarea>
+  </div>
+</div>
+
+<div class="row aboutentry minispacer">
+  <div class="col-md-12">
+    <fieldset>
+      <legend class="h3 subsubtitle">
+        <div class="thelegend">About the Encyclopedia Entry</div>
+      </legend>
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="form-group">
+            <label for="entrytitle" class="pbold">Entry Title:</label>
+            <input type="text" class="form-control" id="entrytitle" placeholder="e.g. Abraham Lincoln">
+          </div>
+          <div class="form-group">
+            <label for="entryurl" class="pbold">Entry URL:</label>
+            <input type="text" class="form-control" id="entryurl" placeholder="e.g. https://en.wikipedia.org/wiki/Abraham_Lincoln">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-offset-1 col-md-3">
+          <p class="pbold">Issues with This Entry</p>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="entryissues" value="incomplete"> Entry is incomplete
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="entryissues" value="biased"> Topic is biased
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="entryissues" value="complex"> Complex/Confusing
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="entryissues" value="notcited"> Poor or missing citations
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="checkbox text-center p">
+            <label>
+              <input type="checkbox" name="author" value="yes"> Check this box if you contributed to this encyclopedia entry
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-9">
+    <div class="form-group">
+      <label for="keywords" class="pbold">Keywords about this post or entry:</label>
+      <input type="email" class="form-control" id="keywords" placeholder="e.g. president, emancipation, greatest president, america">
+    </div>
+  </div>
+  <div class="col-md-3">
+    <button type="submit" class="btn btn-primary btn-lg btn-block postbutton">Post</button>
+  </div>
+</div>
+</form>
+
+
 
 </div>
 </div>

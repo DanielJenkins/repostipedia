@@ -4,8 +4,26 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: Tahoma, Geneva, sans-serif;
 }
-p, div, a {
+p, div, a, textarea, label {
   font-family: "Roboto Slab","Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+label {
+  color: #0E3C78;
+}
+input, textarea {
+  color: #002350 !important;
+}
+::-webkit-input-placeholder {
+   color: #9FB1CA !important;
+}
+:-moz-placeholder {
+   color: #9FB1CA !important;  
+}
+::-moz-placeholder {
+   color: #9FB1CA !important;  
+}
+:-ms-input-placeholder {  
+   color: #9FB1CA !important;  
 }
 .h1 {
   font-size: 48px;
@@ -44,25 +62,35 @@ fieldset {
   padding-left: 10px;
   padding-right: 10px;
   border: 1px solid #9FB1CA;
+  border-radius: 4px;
+  background-color: #9FB1CA;
 }
 legend {
   border: 1px solid #0E3C78;
   width: 352px;
-  border-radius: 5px;
-  text-align: center;
-}
-.entryissues {
-  margin-top: 0px;
+  border-radius: 4px;
+
+  background-color: #9FB1CA;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .entrytexts {
   margin-top: 30px;
 }
-input.entrytexts {
-  width: 400px;
+.keywordssubmit { /*delete if going with the second option for issue 1*/
+  margin-top: 15px;
+}
+.minispacer {
+  margin-top: 15px;
 }
 .newpost {
   background-color: #002350;
   color: #FBFBFB;
+}
+.postbutton {
+  margin-top: 23px;
+  background-color: #3E6291;
+  color: #9FB1CA;
 }
 .subtitle {
   background-color: #002350;
@@ -74,8 +102,8 @@ input.entrytexts {
 .spacer {
   height: 100px;
 }
-.topitem {
-
+.thelegend {
+  text-align: center;
 }
 /*
 COLORS
