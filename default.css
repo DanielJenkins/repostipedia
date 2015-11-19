@@ -10,6 +10,9 @@ p, div, a, textarea, label {
 label {
   color: #0E3C78;
 }
+li {
+  background-color: #FBFBFB !important;
+}
 input, textarea {
   color: #002350 !important;
 }
@@ -57,8 +60,17 @@ input, textarea {
   margin-top: 10px;
   color: #002350;
 }
+.subtitle {
+  background-color: #002350;
+  color: #FBFBFB;
+}
+.subsubtitle {
+  color: #002350;
+  margin-bottom: 0px;
+}
 /*-------Style sheet elements above this line; do not alter-------*/
 
+/*Issue 1*/
 fieldset {
   padding-left: 10px;
   padding-right: 10px;
@@ -110,18 +122,38 @@ legend {
 .subform {
   margin-bottom: 0px;
 }
-.subtitle {
-  background-color: #002350;
-  color: #FBFBFB;
-}
-.subsubtitle {
-  color: #002350;
-  margin-bottom: 0px;
-}
 .spacer {
   height: 100px;
 }
 .thelegend {
+  text-align: center;
+}
+
+/*Issue 2*/
+.excerpt {
+  margin-bottom: 0px;
+  height: 40px !important;
+  color: #92A1B4;
+  overflow: hidden;
+}
+.listbox {
+  height: 500px;
+  border: 1px solid #9FB1CA;
+  border-radius: 4px;
+  background-color: #9FB1CA;
+  overflow: scroll;
+}
+.listright {
+  padding-left: 0px;
+}
+.tallydown {
+  color: red;
+}
+.tallyup {
+  color: green;
+}
+.votearrows {
+  background-color: FBFBFB;
   text-align: center;
 }
 /*
