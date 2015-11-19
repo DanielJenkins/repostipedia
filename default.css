@@ -142,6 +142,8 @@ legend {
   border-radius: 4px;
   background-color: #9FB1CA;
   overflow: scroll;
+  margin-top: 10px;
+  padding: 15px 15px 0px 15px;
 }
 .listright {
   padding-left: 0px;
