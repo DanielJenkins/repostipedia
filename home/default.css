@@ -1,0 +1,100 @@
+body {
+  background-color: #FBFBFB;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+p, div, a {
+  font-family: "Roboto Slab","Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.h1 {
+  font-size: 48px;
+}
+.h2 {
+  font-size: 36px;
+}
+.h3 {
+  font-size: 24px;
+}
+.h4 {
+  font-size: 18px;
+}
+.h5 {
+  font-size: 14px;
+}
+.h6 {
+  font-size: 12px;
+}
+.header {
+  background-color: #3E6291;
+  color: #9FB1CA;
+  height: 100px;
+}
+.p {
+  font-size: 14px;
+}
+.pbold {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #002350;
+}
+/*-------Style sheet elements above this line; do not alter-------*/
+fieldset {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #9FB1CA;
+}
+legend {
+  border: 1px solid #0E3C78;
+  width: 352px;
+  border-radius: 5px;
+  text-align: center;
+}
+.entryissues {
+  margin-top: 0px;
+}
+.entrytexts {
+  margin-top: 30px;
+}
+input.entrytexts {
+  width: 400px;
+}
+.newpost {
+  background-color: #002350;
+  color: #FBFBFB;
+}
+.subtitle {
+  background-color: #002350;
+  color: #FBFBFB;
+}
+.subsubtitle {
+  color: #002350;
+}
+.spacer {
+  height: 100px;
+}
+.topitem {
+
+}
+/*
+COLORS
+#background {
+  background-color: #FBFBFB;
+}
+#lightaccent {
+  background-color: #92A1B4;
+}
+#lighthue {
+  background-color: #9FB1CA;
+}
+#mainhue {
+  background-color: #3E6291;
+}
+#darkaccent {
+  background-color: #0E3C78;
+}
+#darkhue {
+  background-color: #002350;
+}
+*/
