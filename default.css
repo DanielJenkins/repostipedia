@@ -188,7 +188,7 @@ legend {
   border-color: #9FB1CA;
 }
 
-/*Issue 3*/
+/*Issue 3 & 4*/
 .contentbox {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -203,6 +203,19 @@ legend {
   background-color: #9FB1CA;
   border-radius: 4px;
   height: 500px;
+}
+.guidelinesbox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background-color: #FBFBFB;
+  color: #0E3C78;
+  padding: 6px 12px;
+  overflow: scroll;
+}
+.guidelinesholder {
+  background-color: #9FB1CA;
+  border-radius: 4px;
 }
 /*
 COLORS
