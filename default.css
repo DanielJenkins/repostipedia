@@ -196,13 +196,13 @@ legend {
   background-color: #FBFBFB;
   color: #0E3C78;
   padding: 6px 12px;
-  height: 470px;
+
   overflow: scroll;
 }
 .contentholder {
   background-color: #9FB1CA;
   border-radius: 4px;
-  height: 500px;
+
 }
 .guidelinesbox {
   margin-top: 15px;
