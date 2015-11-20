@@ -7,6 +7,12 @@ h1, h2, h3, h4, h5, h6 {
 p, div, a, textarea, label {
   font-family: "Roboto Slab","Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
+p a {
+  color: #9FB1CA;
+}
+p a:hover {
+  color: #0E3C78 !important;
+}
 label {
   color: #0E3C78;
 }
@@ -180,6 +186,23 @@ legend {
 }
 .upvote:hover {
   border-color: #9FB1CA;
+}
+
+/*Issue 3*/
+.contentbox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background-color: #FBFBFB;
+  color: #0E3C78;
+  padding: 6px 12px;
+  height: 470px;
+  overflow: scroll;
+}
+.contentholder {
+  background-color: #9FB1CA;
+  border-radius: 4px;
+  height: 500px;
 }
 /*
 COLORS
