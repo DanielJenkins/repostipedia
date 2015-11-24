@@ -171,9 +171,11 @@ legend {
 }
 .tallydown {
   color: #dc5652;
+  text-align: left;
 }
 .tallyup {
   color: #41ad48;
+  text-align: left;
 }
 .upvote {
   height: 28px;
@@ -217,16 +219,29 @@ legend {
   background-color: #9fb1ca;
   border-radius: 4px;
 }
-.verticalcenter {
-  float:none;
-  vertical-align:middle;
-  display:inline-block;
-  margin-right:-4px;
+.tallybox {
+  display: table;
+  height: 56px;
+  text-align: left;
 }
+.topmarginboost {
+  margin-top: 1px;
+}
+.verticalcenter {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.votearea {
+  display: table;
+  min-height: 69px; /*In the future, set this equal to the height of the title box to its left*/
+}
+
 /*Navigation*/
 .hamburger {
-  padding-top: 15px;
-  padding-right: 30px;
+  height: 100%;
+  padding-top: 18.5px;
+  padding-right: 34px;
   text-align: right;
   color: #fbfbfb;
 }
