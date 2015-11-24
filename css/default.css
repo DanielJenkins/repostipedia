@@ -85,7 +85,7 @@ fieldset {
   background-color: #9fb1ca;
 }
 legend {
-  width: 352px;
+  max-width: 280px;
   border: 1px solid #0e3c78;
   border-radius: 4px;
   padding-top: 5px;
@@ -133,6 +133,7 @@ legend {
 }
 .thelegend {
   text-align: center;
+  width: 
 }
 
 /*Listbox*/
@@ -224,8 +225,10 @@ legend {
 }
 /*Navigation*/
 .hamburger {
+  padding-top: 15px;
+  padding-right: 30px;
+  text-align: right;
   color: #fbfbfb;
-  padding-top: 15px !important;
 }
 .hamburgerlink {
   border: 1px solid #92a1b4;
