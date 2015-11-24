@@ -76,7 +76,7 @@ input, textarea {
 }
 /*-------Style sheet elements above this line; do not alter-------*/
 
-/*Issue 1*/
+/*New Posts*/
 fieldset {
   padding-left: 10px;
   padding-right: 10px;
@@ -135,7 +135,7 @@ legend {
   text-align: center;
 }
 
-/*Issue 2*/
+/*Listbox*/
 .downvote {
   width: 80%;
   height: 28px;
@@ -188,7 +188,7 @@ legend {
   border-color: #9fb1ca;
 }
 
-/*Issue 3 & 4*/
+/*View Post and Community Guidelines*/
 .contentbox {
   padding: 6px 12px;
   margin-top: 15px;
@@ -221,6 +221,18 @@ legend {
   vertical-align:middle;
   display:inline-block;
   margin-right:-4px;
+}
+/*Navigation*/
+.hamburger {
+  color: #fbfbfb;
+  padding-top: 15px !important;
+}
+.hamburgerlink {
+  border: 1px solid #92a1b4;
+  background-color: #002350;
+}
+.hamburgerlink:hover {
+  text-decoration: none;
 }
 /*
 COLORS
