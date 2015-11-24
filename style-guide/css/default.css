@@ -1,0 +1,44 @@
+body {
+  background-color: #FBFBFB;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+p, div, a {
+  font-family: "Roboto Slab","Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.header {
+  background-color: #3E6291;
+  color: #9FB1CA;
+}
+.colors {
+  width: 90%;
+  height: 0;
+  padding-bottom: 90%;
+  border: 1px solid #92A1B4;
+  margin: 10px auto;
+}
+#background {
+  background-color: #FBFBFB;
+}
+#darkaccent {
+  background-color: #0E3C78;
+}
+#darkhue {
+  background-color: #002350;
+}
+#lightaccent {
+  background-color: #92A1B4;
+}
+#lighthue {
+  background-color: #9FB1CA;
+}
+#mainhue {
+  background-color: #3E6291;
+}
+#redhue {
+  background-color: #DC5652;
+}
+#greenhue {
+  background-color: #41AD48;
+}

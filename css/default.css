@@ -1,0 +1,251 @@
+body {
+  background-color: #fbfbfb;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+p, div, a, textarea, label {
+  font-family: "Roboto Slab","Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+p a {
+  color: #9fb1ca;
+}
+p a:hover {
+  color: #0e3c78 !important;
+}
+label {
+  color: #0e3c78;
+}
+li {
+  background-color: #fbfbfb !important;
+}
+input, textarea {
+  color: #002350 !important;
+}
+::-webkit-input-placeholder {
+   color: #9fb1ca !important;
+}
+:-moz-placeholder {
+   color: #9fb1ca !important;  
+}
+::-moz-placeholder {
+   color: #9fb1ca !important;  
+}
+:-ms-input-placeholder {  
+   color: #9fb1ca !important;  
+}
+.h1 {
+  font-size: 48px;
+}
+.h2 {
+  font-size: 36px;
+}
+.h3 {
+  font-size: 24px;
+}
+.h4 {
+  font-size: 18px;
+}
+.h5 {
+  font-size: 14px;
+}
+.h6 {
+  font-size: 12px;
+}
+.header {
+  height: 100px;
+  background-color: #3e6291;
+  color: #9fb1ca;
+}
+.p {
+  font-size: 14px;
+}
+.pbold {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #002350;
+}
+.subtitle {
+  background-color: #002350;
+  color: #fbfbfb;
+}
+.subsubtitle {
+  margin-bottom: 0px;
+  color: #002350;
+}
+/*-------Style sheet elements above this line; do not alter-------*/
+
+/*Issue 1*/
+fieldset {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #9fb1ca;
+  border-radius: 4px;
+  background-color: #9fb1ca;
+}
+legend {
+  width: 352px;
+  border: 1px solid #0e3c78;
+  border-radius: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #9fb1ca;
+}
+.bottomspacer {
+  margin-bottom: 7px;
+}
+.entrytexts {
+  margin-top: 30px;
+}
+.keywordssubmit { /*delete if going with the second option for issue 1*/
+  margin-top: 15px;
+}
+.minispacer {
+  margin-top: 15px;
+}
+.newpost {
+  background-color: #002350;
+  color: #fbfbfb;
+}
+.postbutton {
+  margin-top: 23px;
+  font-size: 24px;
+  background-color: #3e6291;
+  color: #9fb1ca;
+  border-color: #3e6291;
+}
+.postbutton:active {
+  color: #002350 !important;
+  background-color: #9fb1ca !important;
+  border-color: #3e6291 !important;
+}
+.postbutton:hover {
+  color: #fbfbfb;
+  background-color: #002350;
+  border-color: #3e6291;
+}
+.subform {
+  margin-bottom: 0px;
+}
+.spacer {
+  height: 100px;
+}
+.thelegend {
+  text-align: center;
+}
+
+/*Issue 2*/
+.downvote {
+  width: 80%;
+  height: 28px;
+  margin-left:10%;
+  margin-right:10%;
+  margin-top: 1px;
+  border: 1px solid #fbfbfb;
+  line-height: 2px;
+  font-size: 24px;
+  border-radius: 4px;
+}
+.downvote:hover {
+  border-color: #9fb1ca;
+}
+.excerpt {
+  height: 40px !important;
+  margin-bottom: 0px;
+  overflow: hidden;
+  color: #92a1b4;
+}
+.listbox {
+  height: 500px;
+  border: 1px solid #9fb1ca;
+  margin-top: 10px;
+  padding: 15px 15px 0px 15px;
+  overflow: scroll;
+  border-radius: 4px;
+  background-color: #9fb1ca;
+}
+.listright {
+  padding-left: 0px;
+}
+.tallydown {
+  color: #dc5652;
+}
+.tallyup {
+  color: #41ad48;
+}
+.upvote {
+  height: 28px;
+  width: 80%;
+  margin-left:10%;
+  margin-right:10%;
+  border: 1px solid #fbfbfb;
+  font-size: 24px;
+  line-height: 2px;
+  border-radius: 4px;
+}
+.upvote:hover {
+  border-color: #9fb1ca;
+}
+
+/*Issue 3 & 4*/
+.contentbox {
+  padding: 6px 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  overflow: scroll;
+  background-color: #fbfbfb;
+  color: #0e3c78;
+}
+.contentholder {
+  background-color: #9fb1ca;
+  border-radius: 4px;
+
+}
+.guidelinesbox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  padding: 6px 12px;
+  overflow: scroll;
+  background-color: #fbfbfb;
+  color: #0e3c78;
+}
+.guidelinesholder {
+  background-color: #9fb1ca;
+  border-radius: 4px;
+}
+.verticalcenter {
+  float:none;
+  vertical-align:middle;
+  display:inline-block;
+  margin-right:-4px;
+}
+/*
+COLORS
+#background {
+  background-color: #fbfbfb;
+}
+#lightaccent {
+  background-color: #92a1b4;
+}
+#lighthue {
+  background-color: #9fb1ca;
+}
+#mainhue {
+  background-color: #3e6291;
+}
+#darkaccent {
+  background-color: #0e3c78;
+}
+#darkhue {
+  background-color: #002350;
+}
+#green {
+  background-color: #41ad48;
+}
+#red {
+  background-color: #dc5652;
+}
+*/
