@@ -239,11 +239,12 @@ legend {
 
 /*Navigation*/
 .hamburger {
-  height: 100%;
-  padding-top: 18.5px;
-  padding-right: 34px;
+  height: 100px;
+  padding-top: 24px;
+  padding-right: 38px;
   text-align: right;
   color: #fbfbfb;
+  background-color: #3e6291;
 }
 .hamburgerlink {
   border: 1px solid #92a1b4;
