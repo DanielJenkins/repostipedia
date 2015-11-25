@@ -234,7 +234,6 @@ legend {
 }
 .votearea {
   display: table;
-  /*min-height: 69px; *//*In the future, set this equal to the height of the title box to its left*/
 }
 
 /*Navigation*/
@@ -242,9 +241,14 @@ legend {
   height: 100px;
   padding-top: 24px;
   padding-right: 38px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   text-align: right;
   color: #fbfbfb;
   background-color: #3e6291;
+}
+#hamburgerbutton:hover {
+  color: #9fb1ca;
 }
 .hamburgerlink {
   border: 1px solid #92a1b4;
@@ -252,6 +256,9 @@ legend {
 }
 .hamburgerlink:hover {
   text-decoration: none;
+}
+#hamburgerlinks {
+  visibility: hidden;
 }
 /*
 COLORS
