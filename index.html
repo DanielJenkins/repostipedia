@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Repostipedia</title>
-  <script src="js/variables.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
@@ -309,11 +308,42 @@
 <!--Issue 4: View a post-->
 
 <div class="row">
-  <div class="col-xs-12 col-sm-8 col-md-8 subtitle">
+  <div class="col-xs-12 col-sm-8 col-md-8 subtitle" id="titleheight">
     <h1 class="h2 subtitle">Abraham Lincoln: America's Greatest President</h1>
   </div>
-  <!--Votebox-->
-  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-offset-1 col-lg-3 votearea">
+  <!--Votebox Lg-->
+  <div class="hidden-xs col-sm-4 col-md-4 col-lg-offset-1 col-lg-3 votearea" id="voteboxheight">
+    <div class="row verticalcenter">
+      <div class="col-xs-2 col-sm-4 text-center">
+        <div class="row">
+          <a href="">
+            <div class="col-xs-12 upvote">
+              <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <a href="">
+            <div class="col-xs-12 downvote">
+              <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-10 col-sm-8 tallybox">
+        <div class="verticalcenter">
+          <div class="p tallyup">
+            <i class="fa fa-chevron-circle-up"></i> 12
+          </div>
+          <div class="p tallydown topmarginboost">
+            <i class="fa fa-chevron-circle-down"></i> 234
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Votebox XS-->
+  <div class="col-xs-12 hidden-sm hidden-md hidden-lg votearea minispacer">
     <div class="row verticalcenter">
       <div class="col-xs-2 col-sm-4 text-center">
         <div class="row">
@@ -447,5 +477,7 @@
 </div>
 </div>
 </div>
+
+<script src="js/variables.js"></script>
 </body>
 </html>

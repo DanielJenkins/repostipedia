@@ -1,7 +1,13 @@
-var user;
+var titleheight = document.getElementById("titleheight").clientHeight;
+
+function setHeight(newheight) {
+  document.getElementById("voteboxheight").style.height = newheight;
+}
+window.onload = setHeight(titleheight+'px');
 
 //var keywords = [null, null, null, null, null, null, null, null, null, null];
 
+/*
 function Entry(entrytitle,entryurl,author,incomplete,biased,complex,nocitations) {
   this.entrytitle = entrytitle;
   this.entryurl = entryurl;
@@ -21,3 +27,4 @@ function Post(postheader,referencedentry,referencedentry,keywords,currentusersvo
   this.downvotes = downvotes;
 }
 
+*/

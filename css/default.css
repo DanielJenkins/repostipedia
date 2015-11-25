@@ -234,7 +234,7 @@ legend {
 }
 .votearea {
   display: table;
-  min-height: 69px; /*In the future, set this equal to the height of the title box to its left*/
+  /*min-height: 69px; *//*In the future, set this equal to the height of the title box to its left*/
 }
 
 /*Navigation*/
