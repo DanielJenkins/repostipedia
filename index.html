@@ -14,19 +14,57 @@
 </head>
 <body>
 <div class="container-fluid">
+
+<!--Header-->
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 fixed">
+  <div class="row header">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+      <h3 class="h1">rePostipedia</h3>
+    </div>
+    <!--Hamburger Navigation-->
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 hamburger text-center">
+      <h3 class="h1"><i class="fa fa-bars" id="hamburgerbutton"></i></h3>
+    </div>
+  </div>
+  <div class="row" id="hamburgerlinks">
+    <div class="col-xs-offset-3 col-xs-9 col-sm-offset-7 col-sm-5 col-md-offset-7 col-md-5 col-lg-offset-8 col-lg-4">
+      <div class="row hamburgerlink a" id="homelink">
+        <div class="col-xs-12 hamburgerlink">
+          <p class="h3">Home</p>
+        </div>
+      </div>
+      <div class="row hamburgerlink a" id="newpostlink">
+        <div class="col-xs-12 hamburgerlink">
+          <p class="h3">New Post</p>
+        </div>
+      </div>
+      <div class="row hamburgerlink a" id="listofpostslink">
+        <div class="col-xs-12 hamburgerlink">
+          <p class="h3">Recent Posts</p>
+        </div>
+      </div>
+      <div class="row hamburgerlink a" id="usingthissitelink">
+        <div class="col-xs-12 hamburgerlink">
+          <p class="h3 a">Using this site</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <div class="row">
 <div class="col-md-offset-1 col-md-10">
 
-<!--Header-->
-<div class="row header">
-  <div class="col-xs-10">
-    <h3 class="h1">rePostipedia</h3>
-  </div>
-</div>
+<!--Hamburger Navigation-->
+
+  
 
 <div class="row spacer"></div>
 
 <!--Issue 1: Create a New Post-->
+<div id="newpost">
 <form action="??????????????????????????" method="post">
 <div class="row">
   <div class="col-md-12 subtitle">
@@ -112,10 +150,12 @@
   </div>
 </div>
 </form>
+</div>
 
 <div class="row spacer"></div>
 <!--Issue 2: View a list of posts-->
 
+<div id="listofposts">
 <div class="row">
   <div class="col-xs-12 subtitle">
     <h1 class="h2 subtitle">What Others are Reading</h1>
@@ -303,10 +343,12 @@
     </ul>
   </div>
 </div>
+</div>
 
 <div class="row spacer"></div>
 <!--Issue 4: View a post-->
 
+<div id="viewpost">
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-md-8 subtitle" id="titleheight">
     <h1 class="h2 subtitle">Abraham Lincoln: America's Greatest President</h1>
@@ -389,10 +431,13 @@
     </div>
   </div>
 </div>
+</div>
 
 
 <div class="row spacer"></div>
 <!--Issue 5: View Community Guidelines-->
+
+<div id="usingthissite">
 <div class="row">
   <div class="col-xs-12 subtitle">
     <h1 class="h2 subtitle">How to Use this Site</h1>
@@ -428,48 +473,10 @@
     </div>
   </div>
 </div>
-
-
-
-<div class="row spacer"></div>
-<!--Hamburger Navigation-->
-<div class="row">
-  <div class="col-xs-offset-10 col-xs-2 h1 hamburger text-center">
-    <i class="fa fa-bars" id="hamburgerbutton"></i>
-  </div>
 </div>
-<div class="row" id="hamburgerlinks">
-  <div class="col-xs-offset-3 col-xs-9 col-sm-offset-7 col-sm-5 col-md-offset-7 col-md-5 col-lg-offset-8 col-lg-4">
-    <a href="">
-      <div class="row hamburgerlink">
-        <div class="col-xs-12 hamburgerlink">
-          <p class="h3">Home</p>
-        </div>
-      </div>
-    </a>
-    <a href="">
-      <div class="row hamburgerlink">
-        <div class="col-xs-12 hamburgerlink">
-          <p class="h3">New Post</p>
-        </div>
-      </div>
-    </a>
-    <a href="">
-      <div class="row hamburgerlink">
-        <div class="col-xs-12 hamburgerlink">
-          <p class="h3">Recent Posts</p>
-        </div>
-      </div>
-    </a>
-    <a href="">
-      <div class="row hamburgerlink">
-        <div class="col-xs-12 hamburgerlink">
-          <p class="h3">Using this site</p>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
+
+
+
 
 
 <div class="row spacer"></div>

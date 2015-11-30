@@ -1,9 +1,11 @@
 var titleheight = document.getElementById('titleheight').clientHeight;
+console.log(titleheight);
 
 function setHeight(newheight) {
   document.getElementById('voteboxheight').style.height = newheight;
 }
 window.onload = setHeight(titleheight+'px');
+//window.onload = setHeight('100px');
 
 
 //errors in this area
@@ -20,7 +22,37 @@ hamburgerlinks.alterVisibility = function changevisibility() {
   //INSERT PAGE REFRESH???
 }
 
+
 hamburgerbutton.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
+
+
+var homelink = document.getElementById('homelink');
+var newpostlink = document.getElementById('newpostlink');
+var listofpostslink = document.getElementById('listofpostslink');
+var usingthissitelink = document.getElementById('usingthissitelink');
+
+var newpost = document.getElementById('newpost');
+var viewpost = document.getElementById('viewpost');
+var listofposts = document.getElementById('listofposts');
+var usingthissite = document.getElementById('usingthissite');
+
+function loadsegment() {
+  console.log('working');
+  hamburgerlinks.style.visibility="hidden";
+  newpost.style.visibility="hidden";
+  viewpost.style.visibility="hidden";
+  listofposts.style.visibility="hidden";
+  usingthissite.style.visibility="hidden";
+  this.style.visibility="visible";
+}
+
+hamburgerlinks.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
+
+homelink.addEventListener('click',function() {listofposts.loadsegment()},false);
+listofpostslink.addEventListener('click',function() {listofposts.loadsegment()},false);
+newpostlink.addEventListener('click',function() {newpost.loadsegment()},false);
+usingthissitelink.addEventListener('click',function() {usingthissite.loadsegment()},false);
+
 
 
 

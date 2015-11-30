@@ -34,6 +34,17 @@ input, textarea {
 :-ms-input-placeholder {  
    color: #9fb1ca !important;  
 }
+.a {
+  color: #9fb1ca;
+}
+.a:hover {
+  color: #0e3c78 !important;
+  cursor: hand;
+}
+.fixed {
+  position: fixed;
+  z-index: 1;
+}
 .h1 {
   font-size: 48px;
 }
@@ -53,6 +64,7 @@ input, textarea {
   font-size: 12px;
 }
 .header {
+  z-index: 1;
   height: 100px;
   background-color: #3e6291;
   color: #9fb1ca;
@@ -239,16 +251,13 @@ legend {
 /*Navigation*/
 .hamburger {
   height: 100px;
-  padding-top: 24px;
   padding-right: 38px;
-  margin-top: 0px;
-  margin-bottom: 0px;
   text-align: right;
   color: #fbfbfb;
   background-color: #3e6291;
 }
 #hamburgerbutton:hover {
-  color: #9fb1ca;
+  color: #002350;
 }
 .hamburgerlink {
   border: 1px solid #92a1b4;
