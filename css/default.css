@@ -41,10 +41,6 @@ input, textarea {
   color: #0e3c78 !important;
   cursor: hand;
 }
-.fixed {
-  position: fixed;
-  z-index: 1;
-}
 .h1 {
   font-size: 48px;
 }
@@ -68,6 +64,9 @@ input, textarea {
   height: 100px;
   background-color: #3e6291;
   color: #9fb1ca;
+}
+.inheritwidth {
+  width: inherit;
 }
 .p {
   font-size: 14px;
@@ -141,7 +140,7 @@ legend {
   margin-bottom: 0px;
 }
 .spacer {
-  height: 100px;
+  height: 98px;
 }
 .thelegend {
   text-align: center;
@@ -249,6 +248,13 @@ legend {
 }
 
 /*Navigation*/
+.fixed {
+  position: fixed;
+   /*THIS NEEDS TO BE MOVED SO VOTING WORKS ********************************************/
+}
+.front {
+  z-index: 10;
+}
 .hamburger {
   height: 100px;
   padding-right: 38px;
@@ -267,6 +273,8 @@ legend {
   text-decoration: none;
 }
 #hamburgerlinks {
+  margin-top: 99px;
+  height: 0px;
   visibility: hidden;
 }
 /*
