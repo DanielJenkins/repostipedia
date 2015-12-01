@@ -1,5 +1,4 @@
 var titleheight = document.getElementById('titleheight').clientHeight;
-console.log(titleheight);
 
 function setHeight(newheight) {
   document.getElementById('voteboxheight').style.height = newheight;
@@ -8,10 +7,9 @@ window.onload = setHeight(titleheight+'px');
 //window.onload = setHeight('100px');
 
 
-//errors in this area
+//Hamburger Button
 var hamburgerbutton = document.getElementById('hamburgerbutton'); 
 var hamburgerlinks = document.getElementById('hamburgerlinks');
-
 hamburgerlinks.alterVisibility = function changevisibility() {
   if(this.style.visibility == "visible") {
     this.style.visibility="hidden";
@@ -21,11 +19,9 @@ hamburgerlinks.alterVisibility = function changevisibility() {
   }
   //INSERT PAGE REFRESH???
 }
-
-
 hamburgerbutton.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
 
-
+//Hamburger Navigation
 var homelink = document.getElementById('homelink');
 var newpostlink = document.getElementById('newpostlink');
 var listofpostslink = document.getElementById('listofpostslink');
@@ -36,23 +32,23 @@ var viewpost = document.getElementById('viewpost');
 var listofposts = document.getElementById('listofposts');
 var usingthissite = document.getElementById('usingthissite');
 
-function loadsegment() {
-  console.log('working');
-  hamburgerlinks.style.visibility="hidden";
-  newpost.style.visibility="hidden";
-  viewpost.style.visibility="hidden";
-  listofposts.style.visibility="hidden";
-  usingthissite.style.visibility="hidden";
-  this.style.visibility="visible";
+var currentpage = viewpost;
+var newpage = 'empty';
+function loadsegment(theNewpage) {
+  newpage = theNewpage;
+  console.log('changing!');
+  currentpage.classList.remove('show');
+  currentpage.classList.add('hidden');
+  newpage.classList.remove('hidden');
+  newpage.classList.add('show');
+  currentpage = newpage;
 }
 
 hamburgerlinks.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
-
-homelink.addEventListener('click',function() {listofposts.loadsegment()},false);
-listofpostslink.addEventListener('click',function() {listofposts.loadsegment()},false);
-newpostlink.addEventListener('click',function() {newpost.loadsegment()},false);
-usingthissitelink.addEventListener('click',function() {usingthissite.loadsegment()},false);
-
+homelink.addEventListener('click',function() {loadsegment(listofposts)},false);
+listofpostslink.addEventListener('click',function() {loadsegment(listofposts)},false);
+newpostlink.addEventListener('click',function() {loadsegment(newpost)},false);
+usingthissitelink.addEventListener('click',function() {loadsegment(usingthissite)},false);
 
 
 
