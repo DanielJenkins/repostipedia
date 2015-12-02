@@ -100,10 +100,10 @@ function Entry(position, title, content, url, upvotecount, downvotecount, datecr
   }
 }
 var entryA = new Entry(1,titleEntryA,contentEntryA,urlEntryA,upvotecountEntryA,downvotecountEntryA,datecreatedEntryA,votedEntryB);
-var entryB = new Entry(1,titleEntryB,contentEntryB,urlEntryB,600,200,new Date(2015, 10, 28),votedEntryB);
+var entryB = new Entry(1,titleEntryB,contentEntryB,urlEntryB,602,204,new Date(2015, 10, 28),votedEntryB);
 var entryC = new Entry(1,'Voluptatem Sequi C',contentEntryC,urlEntryC,123,234,new Date(2015, 10, 27),votedEntryC);
 var entryD = new Entry(1,'Magnam Aliquam D',contentEntryC,urlEntryC,345,213,new Date(2015, 10, 26),votedEntryC);
-var entryE = new Entry(1,'Dicta sunt Explicabo E',contentEntryC,urlEntryC,500,100,new Date(2015, 10, 25),votedEntryC);
+var entryE = new Entry(1,'Dicta sunt Explicabo E',contentEntryC,urlEntryC,57,43,new Date(2015, 10, 25),votedEntryC);
 var entryF = new Entry(1,'Doloremque Laudantium F',contentEntryC,urlEntryC,32,363,new Date(2015, 10, 24),votedEntryC);
 var entryG = new Entry(1,'Aliquid ex ea commodi consequatur? G',contentEntryC,urlEntryC,23,56,new Date(2015, 10, 23),votedEntryC);
 var entryH = new Entry(1,'Totam rem aperiam H',contentEntryC,urlEntryC,6,788,new Date(2015, 10, 22),votedEntryC);
@@ -219,6 +219,7 @@ function convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entr
 function rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
   compareAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
   convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
+  ////Refresh posts would go here
 }
 rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
 
