@@ -11,10 +11,11 @@ hamburgerlinks.alterVisibility = function changevisibility() {
 }
 hamburgerbutton.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
 
-
 //Hamburger Navigation
 var homelink = document.getElementById('homelink');
 var newpostlink = document.getElementById('newpostlink');
+var viewpostlink1 = document.getElementById('viewpostlink1');
+var viewpostlink2 = document.getElementById('viewpostlink2');
 var listofpostslink = document.getElementById('listofpostslink');
 var usingthissitelink = document.getElementById('usingthissitelink');
 
@@ -35,20 +36,32 @@ function loadsegment(theNewpage) {
   currentpage = newpage;
 }
 
+//View Post Title Adjustments
+function viewposts(theNewpage) {
+  loadsegment(theNewpage);
+  var titleheight = document.getElementById('titleheight').clientHeight;
+  function setHeight(newheight) {
+    document.getElementById('voteboxheight').style.height = newheight;
+  }
+  window.onload = setHeight(titleheight+'px');
+  console.log('visual load!');
+}
+
 hamburgerlinks.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
 homelink.addEventListener('click',function() {loadsegment(listofposts)},false);
 listofpostslink.addEventListener('click',function() {loadsegment(listofposts)},false);
 newpostlink.addEventListener('click',function() {loadsegment(newpost)},false);
 usingthissitelink.addEventListener('click',function() {loadsegment(usingthissite)},false);
+viewpostlink1.addEventListener('click',function() {viewposts(viewpost)},false);
+viewpostlink2.addEventListener('click',function() {viewposts(viewpost)},false);
 
 
-//View Post Title Adjustments
-var titleheight = document.getElementById('titleheight').clientHeight;
 
-function setHeight(newheight) {
-  document.getElementById('voteboxheight').style.height = newheight;
-}
-window.onload = setHeight(titleheight+'px');
+
+
+
+
+
 
 
 //Entry
@@ -68,14 +81,22 @@ function Entry(position, title, content, upvotecount, downvotecount, datecreated
   }
 }
 
-//Normally, this data would be user generated and stored in a separate file.
+
+//Normally, this data would be user-generated and stored in a separate file.
 var titleEntryA = 'We should go to the moon again';
 var contentEntryA = 'We should totally go to the moon again! Check out how cool the Apollo missions were in this great piece. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore';
 var upvotecountEntryA = 999;
 var downvotecountEntryA = 12;
-var datecreatedEntryA = new Date();
+var datecreatedEntryA = new Date(2015, 10, 01);
 
+var titleEntryB = 'We should go to the moon again';
+var contentEntryB = 'We should totally go to the moon again! Check out how cool the Apollo missions were in this great piece. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore';
+var upvotecountEntryB = 500;
+var downvotecountEntryB = 100;
+var datecreatedEntryB = new Date(2015, 10, 01);
 
+var entryA = new Entry(0,titleEntryA,contentEntryA,upvotecountEntryA,downvotecountEntryA,datecreatedEntryA);
+var entryB = new Entry(1,titleEntryB+'2','2'+contentEntryB,upvotecountEntryA,downvotecountEntryA,new Date(2015, 10, 02));
 
 
 
@@ -86,8 +107,8 @@ var datecreatedEntryA = new Date();
  d.setDate(d.getDate()-5);
 
 
-
-
+//Code to change post position here
+var post1 = entryA;
 
 //Post1
 var post1title = document.getElementById('post1title'); 
@@ -95,19 +116,16 @@ var post1content = document.getElementById('post1content');
 var post1upvotecount = document.getElementById('post1upvotecount'); 
 var post1downvotecount = document.getElementById('post1downvotecount'); 
 
-post1title.appendChild(post1.title);
-post1content.appendChild(post1.content);
-post1upvotecount.appendChild(post1.upvotecount);
-post1downvotecount.appendChild(post1.downvotecount);
+
+post1title.appendChild(document.createTextNode(post1.title));
+post1content.appendChild(document.createTextNode(post1.content));
+post1upvotecount.appendChild(document.createTextNode(post1.upvotecount));
+post1downvotecount.appendChild(document.createTextNode(post1.downvotecount));
 
 var post1upvote = document.getElementById('post1upvote'); 
 var post1downvote = document.getElementById('post1downvote');
 post1upvote.addEventListener('click',function() {post1.upvote();},false);
-post1downvote.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
-
-
-
-
+post1downvote.addEventListener('click',function() {post1.downvote();},false);
 
 
 
