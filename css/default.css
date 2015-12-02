@@ -41,6 +41,12 @@ input, textarea {
   color: #0e3c78 !important;
   cursor: hand;
 }
+.footer {
+  z-index: 1;
+  min-height: 100px;
+  background-color: #3e6291;
+  color: #9fb1ca;
+}
 .h1 {
   font-size: 48px;
 }

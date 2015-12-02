@@ -14,8 +14,8 @@ hamburgerbutton.addEventListener('click',function() {hamburgerlinks.alterVisibil
 //Hamburger Navigation
 var homelink = document.getElementById('homelink');
 var newpostlink = document.getElementById('newpostlink');
-var viewpostlink1 = document.getElementById('viewpostlink1');
-var viewpostlink2 = document.getElementById('viewpostlink2');
+var post1viewlink = document.getElementById('post1viewlink');
+var post2viewlink = document.getElementById('post2viewlink');
 var listofpostslink = document.getElementById('listofpostslink');
 var usingthissitelink = document.getElementById('usingthissitelink');
 
@@ -52,8 +52,8 @@ homelink.addEventListener('click',function() {loadsegment(listofposts)},false);
 listofpostslink.addEventListener('click',function() {loadsegment(listofposts)},false);
 newpostlink.addEventListener('click',function() {loadsegment(newpost)},false);
 usingthissitelink.addEventListener('click',function() {loadsegment(usingthissite)},false);
-viewpostlink1.addEventListener('click',function() {viewposts(viewpost)},false);
-viewpostlink2.addEventListener('click',function() {viewposts(viewpost)},false);
+post1viewlink.addEventListener('click',function() {viewposts(viewpost)},false);
+post2viewlink.addEventListener('click',function() {viewposts(viewpost)},false);
 
 
 
@@ -100,31 +100,129 @@ function Entry(position, title, content, url, upvotecount, downvotecount, datecr
   }
 }
 var entryA = new Entry(1,titleEntryA,contentEntryA,urlEntryA,upvotecountEntryA,downvotecountEntryA,datecreatedEntryA,votedEntryB);
-var entryB = new Entry(1,titleEntryB,contentEntryB,urlEntryB,500,100,new Date(2015, 10, 28),votedEntryB);
-var entryC = new Entry(1,titleEntryC+' 3',contentEntryC,urlEntryC,123,234,new Date(2015, 10, 27),votedEntryC);
-var entryD = new Entry(1,titleEntryC+' 4',contentEntryC,urlEntryC,345,213,new Date(2015, 10, 26),votedEntryC);
-var entryE = new Entry(1,titleEntryC+' 5',contentEntryC,urlEntryC,764,1,new Date(2015, 10, 25),votedEntryC);
-var entryF = new Entry(1,titleEntryC+' 6',contentEntryC,urlEntryC,32,363,new Date(2015, 10, 24),votedEntryC);
-var entryG = new Entry(1,titleEntryC+' 7',contentEntryC,urlEntryC,23,56,new Date(2015, 10, 23),votedEntryC);
-var entryH = new Entry(1,titleEntryC+' 8',contentEntryC,urlEntryC,6,788,new Date(2015, 10, 22),votedEntryC);
-var entryI = new Entry(1,titleEntryC+' 9',contentEntryC,urlEntryC,42,567,new Date(2015, 10, 21),votedEntryC);
-var entryJ = new Entry(1,titleEntryC+' 10',contentEntryC,urlEntryC,35,7988,new Date(2015, 10, 20),votedEntryC);
+var entryB = new Entry(1,titleEntryB,contentEntryB,urlEntryB,600,200,new Date(2015, 10, 28),votedEntryB);
+var entryC = new Entry(1,'Voluptatem Sequi C',contentEntryC,urlEntryC,123,234,new Date(2015, 10, 27),votedEntryC);
+var entryD = new Entry(1,'Magnam Aliquam D',contentEntryC,urlEntryC,345,213,new Date(2015, 10, 26),votedEntryC);
+var entryE = new Entry(1,'Dicta sunt Explicabo E',contentEntryC,urlEntryC,500,100,new Date(2015, 10, 25),votedEntryC);
+var entryF = new Entry(1,'Doloremque Laudantium F',contentEntryC,urlEntryC,32,363,new Date(2015, 10, 24),votedEntryC);
+var entryG = new Entry(1,'Aliquid ex ea commodi consequatur? G',contentEntryC,urlEntryC,23,56,new Date(2015, 10, 23),votedEntryC);
+var entryH = new Entry(1,'Totam rem aperiam H',contentEntryC,urlEntryC,6,788,new Date(2015, 10, 22),votedEntryC);
+var entryI = new Entry(1,'Qui ratione voluptatem sequi nesciunt I',contentEntryC,urlEntryC,42,567,new Date(2015, 10, 21),votedEntryC);
+var entryJ = new Entry(1,'Lorem Ipsum J',contentEntryC,urlEntryC,35,7988,new Date(2015, 10, 20),votedEntryC);
 
-////Code to change post position here
-var post1 = entryA;
-var post2 = entryB;
-var post3 = entryC;
-var post4 = entryD;
-var post5 = entryE;
-var post6 = entryF;
-var post7 = entryG;
-var post8 = entryH;
-var post9 = entryI;
-var post10 = entryJ;
+//Change Post Ranking
+function compareTwoEntries(firstEntry,secondEntry) {
+  if (firstEntry!==secondEntry) {
+    if (firstEntry.totalpopularity>secondEntry.totalpopularity) {
+      secondEntry.position+=1;
+    }
+    else if (firstEntry.totalpopularity===secondEntry.totalpopularity) {
+      if (firstEntry.datecreated>secondEntry.datecreated) {
+        secondEntry.position+=1;
+      }
+    }
+    else {
 
+    }
+  }
+}
+function compareManyEntries(entryToCompare) {
+  compareTwoEntries(entryToCompare,entryA);
+  compareTwoEntries(entryToCompare,entryB);
+  compareTwoEntries(entryToCompare,entryC);
+  compareTwoEntries(entryToCompare,entryD);
+  compareTwoEntries(entryToCompare,entryE);
+  compareTwoEntries(entryToCompare,entryF);
+  compareTwoEntries(entryToCompare,entryG);
+  compareTwoEntries(entryToCompare,entryH);
+  compareTwoEntries(entryToCompare,entryI);
+  compareTwoEntries(entryToCompare,entryJ);
+}
+function compareAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
+  entryA.position=1;
+  entryB.position=1;
+  entryC.position=1;
+  entryD.position=1;
+  entryE.position=1;
+  entryF.position=1;
+  entryG.position=1;
+  entryH.position=1;
+  entryI.position=1;
+  entryJ.position=1;
+  compareManyEntries(entryA);
+  compareManyEntries(entryB);
+  compareManyEntries(entryC);
+  compareManyEntries(entryD);
+  compareManyEntries(entryE);
+  compareManyEntries(entryF);
+  compareManyEntries(entryG);
+  compareManyEntries(entryH);
+  compareManyEntries(entryI);
+  compareManyEntries(entryJ);
+}
+var post1;
+var post2;
+var post3;
+var post4;
+var post5;
+var post6;
+var post7;
+var post8;
+var post9;
+var post10;
+function convertToPost(entry) {
+  switch (entry.position) {
+    case 1:
+      post1=entry;
+      break;
+    case 2:
+      post2=entry;
+      break;
+    case 3:
+      post3=entry;
+      break;
+    case 4:
+      post4=entry;
+      break;
+    case 5:
+      post5=entry;
+      break;
+    case 6:
+      post6=entry;
+      break;
+    case 7:
+      post7=entry;
+      break;
+    case 8:
+      post8=entry;
+      break;
+    case 9:
+      post9=entry;
+      break;
+    case 10:
+      post10=entry;
+      break;
+  }
+}
+function convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
+  convertToPost(entryA);
+  convertToPost(entryB);
+  convertToPost(entryC);
+  convertToPost(entryD);
+  convertToPost(entryE);
+  convertToPost(entryF);
+  convertToPost(entryG);
+  convertToPost(entryH);
+  convertToPost(entryI);
+  convertToPost(entryJ);
+}
+function rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
+  compareAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
+  convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
+}
+rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
 
-//Generating Posts. Initiate Wall of Text! Could be handled with a constructor
-
+//Generating Posts.
 function Post(postrank,postnumber) {
   this.postrank = postrank;
   this.title = document.getElementById('post'+postnumber+'title');
@@ -198,7 +296,6 @@ function upvote(post,upvoteid,downvoteid) {
     refreshvotes(post,upvoteid,downvoteid);
   }
 }
-
 function downvote(post,upvoteid,downvoteid) {
   if(post.voted==='none') {
     post.voted='down';
@@ -213,10 +310,25 @@ function downvote(post,upvoteid,downvoteid) {
   }
 }
 
-var post1upvote = document.getElementById('post1upvote'); 
-var post1downvote = document.getElementById('post1downvote');
-post1upvote.addEventListener('click',function(){upvote(post1,'post1upvotecount','post1downvotecount')},false);
-post1downvote.addEventListener('click',function() {downvote(post1,'post1upvotecount','post1downvotecount')},false);
+function VoteButtons(post,postnumber) {
+  var post1upvote = document.getElementById('post'+postnumber+'upvote');
+  var post1downvote = document.getElementById('post'+postnumber+'downvote');
+  post1upvote.addEventListener('click',function(){upvote(post,'post'+postnumber+'upvotecount','post'+postnumber+'downvotecount')},false);
+  post1downvote.addEventListener('click',function() {downvote(post,'post'+postnumber+'upvotecount','post'+postnumber+'downvotecount')},false);
+}
+
+var post1votebuttons = new VoteButtons(post1,1);
+var post2votebuttons = new VoteButtons(post2,2);
+var post3votebuttons = new VoteButtons(post3,3);
+var post4votebuttons = new VoteButtons(post4,4);
+var post5votebuttons = new VoteButtons(post5,5);
+var post6votebuttons = new VoteButtons(post6,6);
+var post7votebuttons = new VoteButtons(post7,7);
+var post8votebuttons = new VoteButtons(post8,8);
+var post9votebuttons = new VoteButtons(post9,9);
+var post10votebuttons = new VoteButtons(post10,10);
+
+
 
 
 /*
@@ -231,4 +343,48 @@ function Entry(entrytitle,entryurl,author,incomplete,biased,complex,nocitations)
 }
 
 var keywords = [null, null, null, null, null, null, null, null, null, null];
+*/
+
+
+/* Template for HTML List elements - replace X's and trailing space with 'post#'
+<li class="list-group-item">
+        <div class="row">
+          <div class="col-xs-2 col-sm-1 text-center">
+            <div class="row">
+                <div class="col-xs-12 upvote" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX upvote">
+                  <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
+                </div>
+            </div>
+            <div class="row">
+              <a>
+                <div class="col-xs-12 downvote" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX downvote">
+                  <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-10 col-sm-11 listright">
+            <div class="row">
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX viewlink">
+                <a class="h4 subsubtitle" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX title"></a>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
+                <div class="row p">
+                  <div class="col-xs-12 col-sm-6">
+                    <div class="tallyup"><i class="fa fa-chevron-circle-up"></i><span id="XXXXXXXXXXXXXXXXXXXXXXXXXXX upvotecount"></span></div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <div class="tallydown"><i class="fa fa-chevron-circle-down"></i><span id="XXXXXXXXXXXXXXXXXXXXXXXXXXX downvotecount"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <p class="p excerpt" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX content"></p>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </li>
 */
