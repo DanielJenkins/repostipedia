@@ -168,11 +168,9 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a>
                 <div class="col-xs-12 upvote" id="post1upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
-              </a>
             </div>
             <div class="row">
               <a>
@@ -190,10 +188,10 @@
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <div class="tallyup" id="post1upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
+                    <div class="tallyup"><i class="fa fa-chevron-circle-up"></i><span id="post1upvotecount"></span></div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <div class="tallydown" id="post1downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
+                    <div class="tallydown"><i class="fa fa-chevron-circle-down"></i><span id="post1downvotecount"></span></div>
                   </div>
                 </div>
               </div>
@@ -206,6 +204,7 @@
           </div>  
         </div>
       </li>
+
       <li class="list-group-item" id="post2">
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
@@ -226,25 +225,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a class="h4 subsubtitle">Lorem Ipsum</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink2">
+                <a class="h4 subsubtitle" id="post2title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <div class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</div>
+                    <div class="tallyup" id="post2upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <div class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</div>
+                    <div class="tallydown" id="post2downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-                </p>
+                <p class="p excerpt" id="post2content"></p>
               </div>
             </div>
           </div>  
@@ -252,18 +249,18 @@
       </li>
 
       <!--Template for list elements starts here-->
-      <li class="list-group-item" id="post3">
+      <li class="list-group-item" id="post3"> <!--THIS ----------- LINE-->
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -272,23 +269,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 1</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post3title"></a> <!--THIS ----------- LINE-->
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <div class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</div>
+                    <div class="tallyup" id="post3upvotecount"><i class="fa fa-chevron-circle-up"></i> </div> <!--THIS ----------- LINE-->
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <div class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</div>
+                    <div class="tallydown" id="post3downvotecount"><i class="fa fa-chevron-circle-down"></i> </div> <!--THIS ----------- LINE-->
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post3content"></p> <!--THIS ----------- LINE-->
               </div>
             </div>
           </div>  
@@ -296,18 +293,18 @@
       </li>
       <!--End Template for list elements-->
 
-      <li class="list-group-item" id="post4">
+      <li class="list-group-item" id="post3">
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -316,23 +313,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 2</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post4title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</span>
+                    <div class="tallyup" id="post4upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post4downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post4content"></p>
               </div>
             </div>
           </div>  
@@ -343,14 +340,14 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -359,23 +356,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 3</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post5title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</span>
+                    <div class="tallyup" id="post5upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post5downvotecount"><i class="fa fa-chevron-circle-down"></i> </div> <!--THIS ----------- LINE-->
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post5content"></p>
               </div>
             </div>
           </div>  
@@ -386,14 +383,14 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -402,23 +399,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 4</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post6title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</span>
+                    <div class="tallyup" id="post6upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post6downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post6content"></p>
               </div>
             </div>
           </div>  
@@ -429,14 +426,14 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -445,23 +442,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 5</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post7title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</span>
+                    <div class="tallyup" id="post7upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post7downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post7content"></p>
               </div>
             </div>
           </div>  
@@ -472,14 +469,14 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -488,23 +485,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 4</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post8title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</span>
+                    <div class="tallyup" id="post8upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post8downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post8content"></p>
               </div>
             </div>
           </div>  
@@ -515,14 +512,14 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -531,23 +528,23 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 4</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post9title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i> 1,234</span>
+                    <div class="tallyup" id="post9upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post9downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post9content"></p>
               </div>
             </div>
           </div>  
@@ -558,14 +555,14 @@
         <div class="row">
           <div class="col-xs-2 col-sm-1 text-center">
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 upvote">
                   <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
                 </div>
               </a>
             </div>
             <div class="row">
-              <a href="">
+              <a>
                 <div class="col-xs-12 downvote">
                   <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
                 </div>
@@ -574,29 +571,28 @@
           </div>
           <div class="col-xs-10 col-sm-11 listright">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
-                <a href="" class="h4 subsubtitle">Post Title 4</a>
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="viewpostlink">
+                <a class="h4 subsubtitle" id="post10title"></a>
               </div>
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
                 <div class="row p">
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallyup"><i class="fa fa-chevron-circle-up"></i>1,234</span>
+                    <div class="tallyup" id="post10upvotecount"><i class="fa fa-chevron-circle-up"></i> </div>
                   </div>
                   <div class="col-xs-12 col-sm-6">
-                    <span class="tallydown"><i class="fa fa-chevron-circle-down"></i> 1,234</span>
+                    <div class="tallydown" id="post10downvotecount"><i class="fa fa-chevron-circle-down"></i> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-12">
-                <p class="p excerpt">Content</p>
+                <p class="p excerpt" id="post10content"></p>
               </div>
             </div>
           </div>  
         </div>
       </li>
-
     </ul>
   </div>
 </div>
