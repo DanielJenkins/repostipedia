@@ -34,6 +34,13 @@ function loadsegment(theNewpage) {
 }
 
 //View Post Adjustments
+function setHeightOfVotebox() {
+    var titleheight = document.getElementById('titleheight').clientHeight;
+    titleheight = titleheight+'px';
+    document.getElementById('voteboxheight').style.height = titleheight;
+  }
+window.addEventListener('resize',function(){setHeightOfVotebox()},false);
+
 var viewposttitle = document.getElementById('viewposttitle');
 var viewpostentryURL = document.getElementById('viewpostentryURL');
 var viewpostupvotecountlg = document.getElementById('viewpostupvotecountlg');
@@ -45,11 +52,10 @@ var viewpostcontent = document.getElementById('viewpostcontent');
 function updateViewContents(partToUpdate,postportion) {
   partToUpdate.removeChild(partToUpdate.firstChild);
   var newtext = document.createTextNode(postportion);
-  console.log(newtext);
   partToUpdate.appendChild(newtext);
 }
 
-function viewposts(post) {
+function viewapost(post) {
   updateViewContents(viewposttitle,post.title);
   updateViewContents(viewpostentryURL,post.url);
   updateViewContents(viewpostupvotecountlg,post.upvotecount);
@@ -57,14 +63,8 @@ function viewposts(post) {
   updateViewContents(viewpostupvotecountxs,post.upvotecount);
   updateViewContents(viewpostdownvotecountxs,post.downvotecount);
   updateViewContents(viewpostcontent,post.content);
-
-  //Positioning of vote buttons on the View A Post page
   loadsegment(viewpost);
-  var titleheight = document.getElementById('titleheight').clientHeight;
-  function setHeight(newheight) {
-    document.getElementById('voteboxheight').style.height = newheight;
-  }
-  window.onload = setHeight(titleheight+'px');
+  setHeightOfVotebox();
 }
 
 //Hamburger menu
@@ -73,16 +73,16 @@ homelink.addEventListener('click',function() {loadsegment(listofposts)},false);
 listofpostslink.addEventListener('click',function() {loadsegment(listofposts)},false);
 newpostlink.addEventListener('click',function() {loadsegment(newpost)},false);
 usingthissitelink.addEventListener('click',function() {loadsegment(usingthissite)},false);
-post1title.addEventListener('click',function() {viewposts(post1)},false);
-post2title.addEventListener('click',function() {viewposts(post2)},false);
-post3title.addEventListener('click',function() {viewposts(post3)},false);
-post4title.addEventListener('click',function() {viewposts(post4)},false);
-post5title.addEventListener('click',function() {viewposts(post5)},false);
-post6title.addEventListener('click',function() {viewposts(post6)},false);
-post7title.addEventListener('click',function() {viewposts(post7)},false);
-post8title.addEventListener('click',function() {viewposts(post8)},false);
-post9title.addEventListener('click',function() {viewposts(post9)},false);
-post10title.addEventListener('click',function() {viewposts(post10)},false);
+post1title.addEventListener('click',function() {viewapost(post1)},false);
+post2title.addEventListener('click',function() {viewapost(post2)},false);
+post3title.addEventListener('click',function() {viewapost(post3)},false);
+post4title.addEventListener('click',function() {viewapost(post4)},false);
+post5title.addEventListener('click',function() {viewapost(post5)},false);
+post6title.addEventListener('click',function() {viewapost(post6)},false);
+post7title.addEventListener('click',function() {viewapost(post7)},false);
+post8title.addEventListener('click',function() {viewapost(post8)},false);
+post9title.addEventListener('click',function() {viewapost(post9)},false);
+post10title.addEventListener('click',function() {viewapost(post10)},false);
 
 //Generating Posts
 //Normally, this data would be user-generated and stored in a separate file.
@@ -369,6 +369,3 @@ function Entry(entrytitle,entryurl,author,incomplete,biased,complex,nocitations,
   this.nocitations = nocitations;
   this.keywords = keywords;
 */
-
-
-/* Template for HTML List elements - 
