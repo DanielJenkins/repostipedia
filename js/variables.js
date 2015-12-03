@@ -14,8 +14,6 @@ hamburgerbutton.addEventListener('click',function() {hamburgerlinks.alterVisibil
 //Hamburger Navigation
 var homelink = document.getElementById('homelink');
 var newpostlink = document.getElementById('newpostlink');
-var post1viewlink = document.getElementById('post1viewlink');
-var post2viewlink = document.getElementById('post2viewlink');
 var listofpostslink = document.getElementById('listofpostslink');
 var usingthissitelink = document.getElementById('usingthissitelink');
 
@@ -28,7 +26,6 @@ var currentpage = listofposts;
 var newpage = 'empty';
 function loadsegment(theNewpage) {
   newpage = theNewpage;
-  console.log('changing!');
   currentpage.classList.remove('show');
   currentpage.classList.add('hidden');
   newpage.classList.remove('hidden');
@@ -36,34 +33,61 @@ function loadsegment(theNewpage) {
   currentpage = newpage;
 }
 
-//View Post Title Adjustments
-function viewposts(theNewpage) {
-  loadsegment(theNewpage);
+//View Post Adjustments
+var viewposttitle = document.getElementById('viewposttitle');
+var viewpostentryURL = document.getElementById('viewpostentryURL');
+var viewpostupvotecountlg = document.getElementById('viewpostupvotecountlg');
+var viewpostdownvotecountlg = document.getElementById('viewpostdownvotecountlg');
+var viewpostupvotecountxs = document.getElementById('viewpostupvotecountxs');
+var viewpostdownvotecountxs = document.getElementById('viewpostdownvotecountxs');
+var viewpostcontent = document.getElementById('viewpostcontent');
+
+function updateViewContents(partToUpdate,postportion) {
+  partToUpdate.removeChild(partToUpdate.firstChild);
+  var newtext = document.createTextNode(postportion);
+  console.log(newtext);
+  partToUpdate.appendChild(newtext);
+}
+
+function viewposts(post) {
+  updateViewContents(viewposttitle,post.title);
+  updateViewContents(viewpostentryURL,post.url);
+  updateViewContents(viewpostupvotecountlg,post.upvotecount);
+  updateViewContents(viewpostdownvotecountlg,post.downvotecount);
+  updateViewContents(viewpostupvotecountxs,post.upvotecount);
+  updateViewContents(viewpostdownvotecountxs,post.downvotecount);
+  updateViewContents(viewpostcontent,post.content);
+
+  //Positioning of vote buttons on the View A Post page
+  loadsegment(viewpost);
   var titleheight = document.getElementById('titleheight').clientHeight;
   function setHeight(newheight) {
     document.getElementById('voteboxheight').style.height = newheight;
   }
   window.onload = setHeight(titleheight+'px');
-  console.log('visual load!');
 }
 
+//Hamburger menu
 hamburgerlinks.addEventListener('click',function() {hamburgerlinks.alterVisibility();},false);
 homelink.addEventListener('click',function() {loadsegment(listofposts)},false);
 listofpostslink.addEventListener('click',function() {loadsegment(listofposts)},false);
 newpostlink.addEventListener('click',function() {loadsegment(newpost)},false);
 usingthissitelink.addEventListener('click',function() {loadsegment(usingthissite)},false);
-post1viewlink.addEventListener('click',function() {viewposts(viewpost)},false);
-post2viewlink.addEventListener('click',function() {viewposts(viewpost)},false);
+post1title.addEventListener('click',function() {viewposts(post1)},false);
+post2title.addEventListener('click',function() {viewposts(post2)},false);
+post3title.addEventListener('click',function() {viewposts(post3)},false);
+post4title.addEventListener('click',function() {viewposts(post4)},false);
+post5title.addEventListener('click',function() {viewposts(post5)},false);
+post6title.addEventListener('click',function() {viewposts(post6)},false);
+post7title.addEventListener('click',function() {viewposts(post7)},false);
+post8title.addEventListener('click',function() {viewposts(post8)},false);
+post9title.addEventListener('click',function() {viewposts(post9)},false);
+post10title.addEventListener('click',function() {viewposts(post10)},false);
 
-
-
-
-
-
-
+//Generating Posts
 //Normally, this data would be user-generated and stored in a separate file.
 var titleEntryA = 'We should go to the moon again';
-var contentEntryA = 'We should totally go to the moon again! Check out how cool the Apollo missions were in this great piece. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore';
+var contentEntryA = 'We should totally go to the moon again! Check out how cool the Apollo missions were in this great piece. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.';
 var urlEntryA = 'https://en.wikipedia.org/wiki/Test';
 var upvotecountEntryA = 999;
 var downvotecountEntryA = 12;
@@ -220,6 +244,7 @@ function rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,
   compareAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
   convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
   ////Refresh posts would go here
+
 }
 rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
 
@@ -231,16 +256,16 @@ function Post(postrank,postnumber) {
   this.upvotecount = document.getElementById('post'+postnumber+'upvotecount');
   this.downvotecount = document.getElementById('post'+postnumber+'downvotecount');
 }
-documentPost1 = new Post(post1,'1');
-documentPost2 = new Post(post2,'2');
-documentPost3 = new Post(post3,'3');
-documentPost4 = new Post(post4,'4');
-documentPost5 = new Post(post5,'5');
-documentPost6 = new Post(post6,'6');
-documentPost7 = new Post(post7,'7');
-documentPost8 = new Post(post8,'8');
-documentPost9 = new Post(post9,'9');
-documentPost10 = new Post(post10,'10');
+var documentPost1 = new Post(post1,'1');
+var documentPost2 = new Post(post2,'2');
+var documentPost3 = new Post(post3,'3');
+var documentPost4 = new Post(post4,'4');
+var documentPost5 = new Post(post5,'5');
+var documentPost6 = new Post(post6,'6');
+var documentPost7 = new Post(post7,'7');
+var documentPost8 = new Post(post8,'8');
+var documentPost9 = new Post(post9,'9');
+var documentPost10 = new Post(post10,'10');
 
 function fillpost(documentPost) {
   documentPost.title.appendChild(document.createTextNode(documentPost.postrank.title));
@@ -333,7 +358,8 @@ var post10votebuttons = new VoteButtons(post10,10);
 
 
 /*
-function Entry(entrytitle,entryurl,author,incomplete,biased,complex,nocitations) {
+//When a new entry is created, the following information will be stored:
+function Entry(entrytitle,entryurl,author,incomplete,biased,complex,nocitations,keywords) {
   this.entrytitle = entrytitle;
   this.entryurl = entryurl;
   this.author = author;
@@ -341,51 +367,8 @@ function Entry(entrytitle,entryurl,author,incomplete,biased,complex,nocitations)
   this.biased = biased;
   this.complex = complex;
   this.nocitations = nocitations;
-}
-
-var keywords = [null, null, null, null, null, null, null, null, null, null];
+  this.keywords = keywords;
 */
 
 
-/* Template for HTML List elements - replace X's and trailing space with 'post#'
-<li class="list-group-item">
-        <div class="row">
-          <div class="col-xs-2 col-sm-1 text-center">
-            <div class="row">
-                <div class="col-xs-12 upvote" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX upvote">
-                  <span class="tallyup"><i class="fa fa-chevron-circle-up"></i></span>
-                </div>
-            </div>
-            <div class="row">
-              <a>
-                <div class="col-xs-12 downvote" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX downvote">
-                  <span class="tallydown"><i class="fa fa-chevron-circle-down"></i></span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-xs-10 col-sm-11 listright">
-            <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX viewlink">
-                <a class="h4 subsubtitle" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX title"></a>
-              </div>
-              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 tally">
-                <div class="row p">
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="tallyup"><i class="fa fa-chevron-circle-up"></i><span id="XXXXXXXXXXXXXXXXXXXXXXXXXXX upvotecount"></span></div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="tallydown"><i class="fa fa-chevron-circle-down"></i><span id="XXXXXXXXXXXXXXXXXXXXXXXXXXX downvotecount"></span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <p class="p excerpt" id="XXXXXXXXXXXXXXXXXXXXXXXXXXX content"></p>
-              </div>
-            </div>
-          </div>  
-        </div>
-      </li>
-*/
+/* Template for HTML List elements - 
