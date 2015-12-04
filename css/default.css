@@ -289,6 +289,12 @@ legend {
   background-image: radial-gradient(at 0% 0%, #3e6291 30%, #002350 100%);
   color: #9fb1ca;
 }
+#footerimage {
+  height: 100px;
+  width: 100%;
+  background-image: url("../images/encyclopedias.jpg");
+  background-size: 100% 100px;
+}
 .logo {
   height: 150px;
 }
@@ -307,6 +313,9 @@ legend {
 }
 .logotext:hover {
   color: #002350;
+}
+.smallspacer {
+  height: 20px;
 }
 /*
 COLORS
