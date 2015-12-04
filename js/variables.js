@@ -33,6 +33,16 @@ function loadsegment(theNewpage) {
   currentpage = newpage;
 }
 
+//Footer Background Image Scaling
+function backgroundHeight(idname) {
+    var background = document.getElementById(idname);
+    width = background.clientWidth;
+    height = ((width/2484)*185)+'px';
+    background.style.height = height;
+  }
+backgroundHeight('headerimage');
+window.addEventListener('resize',function(){backgroundHeight('headerimage');},false);
+
 //View Post Adjustments
 function setHeightOfVotebox() {
     var titleheight = document.getElementById('titleheight').clientHeight;

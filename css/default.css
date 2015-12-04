@@ -20,7 +20,7 @@ label {
   color: #0e3c78;
 }
 li {
-  background-color: #fbfbfb !important;
+  background-color: #fbfbfb;
 }
 input, textarea {
   color: #002350 !important;
@@ -62,12 +62,6 @@ input, textarea {
 .h6 {
   font-size: 12px;
 }
-.header {
-  z-index: 1;
-  height: 100px;
-  background-color: #3e6291;
-  color: #9fb1ca;
-}
 .inheritwidth {
   width: inherit;
 }
@@ -89,6 +83,19 @@ input, textarea {
   color: #002350;
 }
 /*-------Style sheet elements above this line; do not alter-------*/
+/*Header*/
+.header {
+  z-index: 1;
+  height: 100px;
+  background-color: #3e6291;
+  color: #9fb1ca;
+}
+#headerimage {
+  width: 100%;
+  background-image: url("../images/encyclopedias.jpg");
+  background-size: 100%;
+  opacity: 0.9;
+}
 
 /*New Posts*/
 fieldset {
@@ -284,16 +291,20 @@ legend {
   visibility: hidden;
 }
 /*Footer*/
+.bottomnavigation {
+  background-color: #92a1b4;
+}
+.encyclopedias {
+  width: 100%;
+  opacity: 0.5;
+}
 .footer {
   z-index: 1;
   background-image: radial-gradient(at 0% 0%, #3e6291 30%, #002350 100%);
   color: #9fb1ca;
 }
-#footerimage {
-  height: 100px;
-  width: 100%;
-  background-image: url("../images/encyclopedias.jpg");
-  background-size: 100% 100px;
+.linksfooter>li {
+  background-color: #92a1b4;
 }
 .logo {
   height: 150px;
@@ -306,13 +317,26 @@ legend {
 }
 .logotext {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-family: 'Roboto Slab', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   color: #9fb1ca;
 }
 .logotext:hover {
   color: #002350;
+}
+.referenceimagesm {
+  height: 133px;
+  width: 222px;
+  margin-top: 10px;
+  opacity: 0.8;
+  background-image: url("../images/encyclopediascloseup.jpg");
+  background-size: 100%;
+}
+.referenceimagexs {
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 .smallspacer {
   height: 20px;
