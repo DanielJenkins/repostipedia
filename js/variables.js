@@ -83,23 +83,15 @@ homelink.addEventListener('click',function() {loadsegment(listofposts)},false);
 listofpostslink.addEventListener('click',function() {loadsegment(listofposts)},false);
 newpostlink.addEventListener('click',function() {loadsegment(newpost)},false);
 usingthissitelink.addEventListener('click',function() {loadsegment(usingthissite)},false);
-post1title.addEventListener('click',function() {viewapost(post1)},false);
-post2title.addEventListener('click',function() {viewapost(post2)},false);
-post3title.addEventListener('click',function() {viewapost(post3)},false);
-post4title.addEventListener('click',function() {viewapost(post4)},false);
-post5title.addEventListener('click',function() {viewapost(post5)},false);
-post6title.addEventListener('click',function() {viewapost(post6)},false);
-post7title.addEventListener('click',function() {viewapost(post7)},false);
-post8title.addEventListener('click',function() {viewapost(post8)},false);
-post9title.addEventListener('click',function() {viewapost(post9)},false);
-post10title.addEventListener('click',function() {viewapost(post10)},false);
+
+
 
 //Generating Posts
 //Normally, this data would be user-generated and stored in a separate file.
 var titleEntryA = 'We should go to the moon again';
 var contentEntryA = 'We should totally go to the moon again! Check out how cool the Apollo missions were in this great piece. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.';
 var urlEntryA = 'https://en.wikipedia.org/wiki/Test';
-var upvotecountEntryA = 999;
+var upvotecountEntryA = 998;
 var downvotecountEntryA = 12;
 var datecreatedEntryA = new Date(2015, 10, 30);
 var votedEntryA='none';
@@ -133,16 +125,17 @@ function Entry(position, title, content, url, upvotecount, downvotecount, datecr
     this.downvotecount += 1;
   }
 }
-var entryA = new Entry(1,titleEntryA,contentEntryA,urlEntryA,upvotecountEntryA,downvotecountEntryA,datecreatedEntryA,votedEntryB);
-var entryB = new Entry(1,titleEntryB,contentEntryB,urlEntryB,602,204,new Date(2015, 10, 28),votedEntryB);
-var entryC = new Entry(1,'Voluptatem Sequi C',contentEntryC,urlEntryC,123,234,new Date(2015, 10, 27),votedEntryC);
-var entryD = new Entry(1,'Magnam Aliquam D',contentEntryC,urlEntryC,345,213,new Date(2015, 10, 26),votedEntryC);
-var entryE = new Entry(1,'Dicta sunt Explicabo E',contentEntryC,urlEntryC,57,43,new Date(2015, 10, 25),votedEntryC);
-var entryF = new Entry(1,'Doloremque Laudantium F',contentEntryC,urlEntryC,32,363,new Date(2015, 10, 24),votedEntryC);
-var entryG = new Entry(1,'Aliquid ex ea commodi consequatur? G',contentEntryC,urlEntryC,23,56,new Date(2015, 10, 23),votedEntryC);
-var entryH = new Entry(1,'Totam rem aperiam H',contentEntryC,urlEntryC,6,788,new Date(2015, 10, 22),votedEntryC);
-var entryI = new Entry(1,'Qui ratione voluptatem sequi nesciunt I',contentEntryC,urlEntryC,42,567,new Date(2015, 10, 21),votedEntryC);
-var entryJ = new Entry(1,'Lorem Ipsum J',contentEntryC,urlEntryC,35,7988,new Date(2015, 10, 20),votedEntryC);
+var entries = []
+entries[0] = new Entry(0,titleEntryA,contentEntryA,urlEntryA,upvotecountEntryA,downvotecountEntryA,datecreatedEntryA,votedEntryB);
+entries[1] = new Entry(0,titleEntryB,contentEntryB,urlEntryB,602,204,new Date(2015, 10, 28),votedEntryB);
+entries[2] = new Entry(0,'Voluptatem Sequi C',contentEntryC,urlEntryC,123,234,new Date(2015, 10, 27),votedEntryC);
+entries[3] = new Entry(0,'Magnam Aliquam D',contentEntryC,urlEntryC,345,213,new Date(2015, 10, 26),votedEntryC);
+entries[4] = new Entry(0,'Dicta sunt Explicabo E',contentEntryC,urlEntryC,57,43,new Date(2015, 10, 25),votedEntryC);
+entries[5] = new Entry(0,'Doloremque Laudantium F',contentEntryC,urlEntryC,32,363,new Date(2015, 10, 24),votedEntryC);
+entries[6] = new Entry(0,'Aliquid ex ea commodi consequatur? G',contentEntryC,urlEntryC,23,56,new Date(2015, 10, 23),votedEntryC);
+entries[7] = new Entry(0,'Totam rem aperiam H',contentEntryC,urlEntryC,6,788,new Date(2015, 10, 22),votedEntryC);
+entries[8] = new Entry(0,'Qui ratione voluptatem sequi nesciunt I',contentEntryC,urlEntryC,42,567,new Date(2015, 10, 21),votedEntryC);
+entries[9] = new Entry(0,'Lorem Ipsum J',contentEntryC,urlEntryC,35,7988,new Date(2015, 10, 20),votedEntryC);
 
 //Change Post Ranking
 function compareTwoEntries(firstEntry,secondEntry) {
@@ -160,142 +153,61 @@ function compareTwoEntries(firstEntry,secondEntry) {
     }
   }
 }
-function compareManyEntries(entryToCompare) {
-  compareTwoEntries(entryToCompare,entryA);
-  compareTwoEntries(entryToCompare,entryB);
-  compareTwoEntries(entryToCompare,entryC);
-  compareTwoEntries(entryToCompare,entryD);
-  compareTwoEntries(entryToCompare,entryE);
-  compareTwoEntries(entryToCompare,entryF);
-  compareTwoEntries(entryToCompare,entryG);
-  compareTwoEntries(entryToCompare,entryH);
-  compareTwoEntries(entryToCompare,entryI);
-  compareTwoEntries(entryToCompare,entryJ);
+function compareAllEntries() {
+  for (var k = 0; k < entries.length; k++) {
+    for (var j = 0; j < entries.length; j++) {
+        compareTwoEntries(entries[k],entries[j]);
+    }; 
+  };
 }
-function compareAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
-  entryA.position=1;
-  entryB.position=1;
-  entryC.position=1;
-  entryD.position=1;
-  entryE.position=1;
-  entryF.position=1;
-  entryG.position=1;
-  entryH.position=1;
-  entryI.position=1;
-  entryJ.position=1;
-  compareManyEntries(entryA);
-  compareManyEntries(entryB);
-  compareManyEntries(entryC);
-  compareManyEntries(entryD);
-  compareManyEntries(entryE);
-  compareManyEntries(entryF);
-  compareManyEntries(entryG);
-  compareManyEntries(entryH);
-  compareManyEntries(entryI);
-  compareManyEntries(entryJ);
-}
-var post1;
-var post2;
-var post3;
-var post4;
-var post5;
-var post6;
-var post7;
-var post8;
-var post9;
-var post10;
+var postContents = [];
 function convertToPost(entry) {
-  switch (entry.position) {
-    case 1:
-      post1=entry;
-      break;
-    case 2:
-      post2=entry;
-      break;
-    case 3:
-      post3=entry;
-      break;
-    case 4:
-      post4=entry;
-      break;
-    case 5:
-      post5=entry;
-      break;
-    case 6:
-      post6=entry;
-      break;
-    case 7:
-      post7=entry;
-      break;
-    case 8:
-      post8=entry;
-      break;
-    case 9:
-      post9=entry;
-      break;
-    case 10:
-      post10=entry;
-      break;
-  }
+  for (var i = 0; i < 10; i++) {
+    if(entry.position===i) {
+      postContents[i]=entry;
+    };
+  };
 }
-function convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
-  convertToPost(entryA);
-  convertToPost(entryB);
-  convertToPost(entryC);
-  convertToPost(entryD);
-  convertToPost(entryE);
-  convertToPost(entryF);
-  convertToPost(entryG);
-  convertToPost(entryH);
-  convertToPost(entryI);
-  convertToPost(entryJ);
+function convertAllEntries() {
+  for (var m = 0; m < 10; m++) {
+    convertToPost(entries[m]);
+  };
 }
-function rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ) {
-  compareAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
-  convertAllEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
+function rankAndConvertEntries() {
+  compareAllEntries();
+  convertAllEntries();
   ////Refresh posts would go here
-
 }
-rankAndConvertEntries(entryA,entryB,entryC,entryD,entryE,entryF,entryG,entryH,entryI,entryJ);
+rankAndConvertEntries();
 
 //Generating Posts.
-function Post(postrank,postnumber) {
-  this.postrank = postrank;
-  this.title = document.getElementById('post'+postnumber+'title');
-  this.content = document.getElementById('post'+postnumber+'content');
-  this.upvotecount = document.getElementById('post'+postnumber+'upvotecount');
-  this.downvotecount = document.getElementById('post'+postnumber+'downvotecount');
+function Post(post) {
+  this.post = post;
+  this.documentTitle = document.getElementById('post'+post.position+'title');
+  this.documentContent = document.getElementById('post'+post.position+'content');
+  this.documentUpvotecount = document.getElementById('post'+post.position+'upvotecount');
+  this.documentDownvotecount = document.getElementById('post'+post.position+'downvotecount');
+  this.documentTitle.addEventListener('click',function() {viewapost(post)},false);
 }
-var documentPost1 = new Post(post1,'1');
-var documentPost2 = new Post(post2,'2');
-var documentPost3 = new Post(post3,'3');
-var documentPost4 = new Post(post4,'4');
-var documentPost5 = new Post(post5,'5');
-var documentPost6 = new Post(post6,'6');
-var documentPost7 = new Post(post7,'7');
-var documentPost8 = new Post(post8,'8');
-var documentPost9 = new Post(post9,'9');
-var documentPost10 = new Post(post10,'10');
+
+var documentPost = [];
+for (var i = 0; i < postContents.length; i++) {
+  documentPost[i] = new Post(postContents[i]);
+};
 
 function fillpost(documentPost) {
-  documentPost.title.appendChild(document.createTextNode(documentPost.postrank.title));
-  documentPost.content.appendChild(document.createTextNode(documentPost.postrank.content));
-  var upvotesText=document.createTextNode(' '+documentPost.postrank.upvotecount);
-  documentPost.upvotecount.appendChild(upvotesText);
-  var downvotesText=document.createTextNode(' '+documentPost.postrank.downvotecount);
-  documentPost.downvotecount.appendChild(downvotesText);
+  documentPost.documentTitle.appendChild(document.createTextNode(documentPost.post.title));
+  documentPost.documentContent.appendChild(document.createTextNode(documentPost.post.content));
+  documentPost.documentContent.appendChild(document.createTextNode(documentPost.post.content));
+  var upvotesText=document.createTextNode(' '+documentPost.post.upvotecount);
+  documentPost.documentUpvotecount.appendChild(upvotesText);
+  var downvotesText=document.createTextNode(' '+documentPost.post.downvotecount);
+  documentPost.documentDownvotecount.appendChild(downvotesText);
 }
 
-fillpost(documentPost1);
-fillpost(documentPost2);
-fillpost(documentPost3);
-fillpost(documentPost4);
-fillpost(documentPost5);
-fillpost(documentPost6);
-fillpost(documentPost7);
-fillpost(documentPost8);
-fillpost(documentPost9);
-fillpost(documentPost10);
+for (var i = 0; i < documentPost.length; i++) {
+  fillpost(documentPost[i]);
+};
 
 
 //Voting
@@ -346,24 +258,17 @@ function downvote(post,upvoteid,downvoteid) {
   }
 }
 
-function VoteButtons(post,postnumber) {
-  var post1upvote = document.getElementById('post'+postnumber+'upvote');
-  var post1downvote = document.getElementById('post'+postnumber+'downvote');
-  post1upvote.addEventListener('click',function(){upvote(post,'post'+postnumber+'upvotecount','post'+postnumber+'downvotecount')},false);
-  post1downvote.addEventListener('click',function() {downvote(post,'post'+postnumber+'upvotecount','post'+postnumber+'downvotecount')},false);
+function VoteButtons(post) {
+  this.postupvote = document.getElementById('post'+post.position+'upvote');
+  this.postdownvote = document.getElementById('post'+post.position+'downvote');
+  this.postupvote.addEventListener('click',function(){upvote(post,'post'+post.position+'upvotecount','post'+post.position+'downvotecount')},false);
+  this.postdownvote.addEventListener('click',function() {downvote(post,'post'+post.position+'upvotecount','post'+post.position+'downvotecount')},false);
 }
 
-var post1votebuttons = new VoteButtons(post1,1);
-var post2votebuttons = new VoteButtons(post2,2);
-var post3votebuttons = new VoteButtons(post3,3);
-var post4votebuttons = new VoteButtons(post4,4);
-var post5votebuttons = new VoteButtons(post5,5);
-var post6votebuttons = new VoteButtons(post6,6);
-var post7votebuttons = new VoteButtons(post7,7);
-var post8votebuttons = new VoteButtons(post8,8);
-var post9votebuttons = new VoteButtons(post9,9);
-var post10votebuttons = new VoteButtons(post10,10);
-
+var postVoteButtons = [];
+for (var i = 0; i < postContents.length; i++) {
+  postVoteButtons[i] = new VoteButtons(postContents[i]);
+};
 
 
 
