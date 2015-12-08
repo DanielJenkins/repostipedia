@@ -27,11 +27,62 @@ var newpage = 'empty';
 function loadsegment(theNewpage) {
   newpage = theNewpage;
   if (currentpage===viewpost && newpage!==viewpost){
-    upvoteBtnLg.removeEventListener('click',function(){viewPostUpvote(post);},false);
-    downvoteBtnLg.removeEventListener('click',function(){viewPostDownvote(post);},false);
-    upvoteBtnXS.removeEventListener('click',function(){viewPostUpvote(post);},false);
-    downvoteBtnXS.removeEventListener('click',function(){viewPostDownvote(post);},false);
-    ////Remove eventlisteners here
+    ////Remove eventlisteners on buttons
+
+    /* Removes and re-adds the associated divs
+    console.log('clearing vote buttons');
+    upvoteLgParent = upvoteBtnLg.parentNode;
+    upvoteLgParent.removeChild(upvoteBtnLg);
+    newUpvoteLgBtn = document.createElement('div');
+    newUpvoteLgBtn.setAttribute('class','col-xs-12 upvote a');
+    newUpvoteLgBtn.setAttribute('id','upvoteBtnLg');
+    upvoteLgParent.appendChild(newUpvoteLgBtn);
+    newUpvoteLgSpan = document.createElement('span');
+    newUpvoteLgSpan.setAttribute('class','tallyup');
+    newUpvoteLgBtn.appendChild(newUpvoteLgSpan);
+    newUpvoteLgChevron = document.createElement('i');
+    newUpvoteLgChevron.setAttribute('class','fa fa-chevron-circle-up');
+    newUpvoteLgSpan.appendChild(newUpvoteLgChevron);
+
+    downvoteLgParent = downvoteBtnLg.parentNode;
+    downvoteLgParent.removeChild(downvoteBtnLg);
+    newDownvoteLgBtn = document.createElement('div');
+    newDownvoteLgBtn.setAttribute('class','col-xs-12 downvote a');
+    newDownvoteLgBtn.setAttribute('id','downvoteBtnLg');
+    downvoteLgParent.appendChild(newDownvoteLgBtn);
+    newDownvoteLgSpan = document.createElement('span');
+    newDownvoteLgSpan.setAttribute('class','tallydown');
+    newDownvoteLgBtn.appendChild(newDownvoteLgSpan);
+    newDownvoteLgChevron = document.createElement('i');
+    newDownvoteLgChevron.setAttribute('class','fa fa-chevron-circle-down');
+    newDownvoteLgSpan.appendChild(newDownvoteLgChevron);
+
+    upvoteXSParent = upvoteBtnXS.parentNode;
+    upvoteXSParent.removeChild(upvoteBtnXS);
+    newUpvoteXSBtn = document.createElement('div');
+    newUpvoteXSBtn.setAttribute('class','col-xs-12 upvote a');
+    newUpvoteXSBtn.setAttribute('id','upvoteBtnXS');
+    upvoteXSParent.appendChild(newUpvoteXSBtn);
+    newUpvoteXSSpan = document.createElement('span');
+    newUpvoteXSSpan.setAttribute('class','tallyup');
+    newUpvoteXSBtn.appendChild(newUpvoteXSSpan);
+    newUpvoteXSChevron = document.createElement('i');
+    newUpvoteXSChevron.setAttribute('class','fa fa-chevron-circle-up');
+    newUpvoteXSSpan.appendChild(newUpvoteXSChevron);
+
+    downvoteXSParent = downvoteBtnXS.parentNode;
+    downvoteXSParent.removeChild(downvoteBtnXS);
+    newDownvoteXSBtn = document.createElement('div');
+    newDownvoteXSBtn.setAttribute('class','col-xs-12 downvote a');
+    newDownvoteXSBtn.setAttribute('id','downvoteBtnXS');
+    downvoteXSParent.appendChild(newDownvoteXSBtn);
+    newDownvoteXSSpan = document.createElement('span');
+    newDownvoteXSSpan.setAttribute('class','tallydown');
+    newDownvoteXSBtn.appendChild(newDownvoteXSSpan);
+    newDownvoteXSChevron = document.createElement('i');
+    newDownvoteXSChevron.setAttribute('class','fa fa-chevron-circle-down');
+    newDownvoteXSSpan.appendChild(newDownvoteXSChevron);
+    */
   }
   currentpage.classList.remove('show');
   currentpage.classList.add('hidden');
@@ -49,6 +100,13 @@ function backgroundHeight(idname) {
   }
 backgroundHeight('headerimage');
 window.addEventListener('resize',function(){backgroundHeight('headerimage');},false);
+
+
+
+
+
+
+
 
 //View Post Adjustments
 function setHeightOfVotebox() {
@@ -86,20 +144,20 @@ function viewapost(post) {
   upvoteBtnXS = document.getElementById('upvoteBtnXS');
   downvoteBtnXS = document.getElementById('downvoteBtnXS');
   viewPostUpvote = function(post){
-    console.log('upvote view a post');
     upvote(post);
     updateViewContents(viewpostupvotecountlg,post.upvotecount);
     updateViewContents(viewpostdownvotecountlg,post.downvotecount);
     updateViewContents(viewpostupvotecountxs,post.upvotecount);
     updateViewContents(viewpostdownvotecountxs,post.downvotecount);
+    refreshPosts();
   }
   viewPostDownvote = function(post){
-    console.log('downvote view a post');
     downvote(post);
     updateViewContents(viewpostupvotecountlg,post.upvotecount);
     updateViewContents(viewpostdownvotecountlg,post.downvotecount);
     updateViewContents(viewpostupvotecountxs,post.upvotecount);
     updateViewContents(viewpostdownvotecountxs,post.downvotecount);
+    refreshPosts();
   }
   upvoteBtnLg.addEventListener('click',function(){viewPostUpvote(post);},false);
   downvoteBtnLg.addEventListener('click',function(){viewPostDownvote(post);},false);
@@ -210,12 +268,19 @@ function fillPosts() {
     postContents[i].documentUpvotecount.appendChild(upvotesText);
     var downvotesText=document.createTextNode(' '+postContents[i].post.downvotecount);
     postContents[i].documentDownvotecount.appendChild(downvotesText);
+    upvoteViewPosts = function(j) {
+      upvote(j)
+      refreshPosts();
+    }
+    downvoteViewPosts = function(j) {
+      downvote(j)
+      refreshPosts();
+    }
     addPostListeners = function(k) {
       postContents[k].documentTitle.addEventListener('click',function() {viewapost(entries[k]);},false);
-      postContents[k].postUpvoteBtn.addEventListener('click',function(){upvote(entries[k]);},false);
-      postContents[k].postDownvoteBtn.addEventListener('click',function() {downvote(entries[k]);},false);
+      postContents[k].postUpvoteBtn.addEventListener('click',function(){upvoteViewPosts(entries[k]);},false);
+      postContents[k].postDownvoteBtn.addEventListener('click',function() {downvoteViewPosts(entries[k]);},false);
       count++;
-      console.log('adding listeners'+count);
     }
     addPostListeners(i);
   };
@@ -228,7 +293,8 @@ function refreshPosts() {
     postContents[i].documentContent.removeChild(postContents[i].documentContent.lastChild);
     postContents[i].documentUpvotecount.removeChild(postContents[i].documentUpvotecount.lastChild);
     postContents[i].documentDownvotecount.removeChild(postContents[i].documentDownvotecount.lastChild);
-    removePostListeners = function(k) { ////Can't remove event listeners within themselves
+    removePostListeners = function(k) {
+      ////These aren't removing for some reason
       postContents[k].documentTitle.removeEventListener('click',function() {viewapost(entries[k]);},false);
       postContents[k].postUpvoteBtn.removeEventListener('click',function(){upvote(entries[k]);},false);
       postContents[k].postDownvoteBtn.removeEventListener('click',function() {downvote(entries[k]);},false);
@@ -245,14 +311,12 @@ upvote = function(post) {
     post.voted='up';
     post.upvotecount+=1;
     console.log('upvote');
-    refreshPosts();
   }
   if(post.voted==='down') {
     post.voted='up';
     post.upvotecount+=1;
     post.downvotecount-=1;
     console.log('change to upvote');
-    refreshPosts();
   }
 }
 downvote = function(post){
@@ -260,14 +324,12 @@ downvote = function(post){
     post.voted='down';
     post.downvotecount+=1;
     console.log('downvote');
-    refreshPosts();
   }
   if(post.voted==='up') {
-    post='down';
+    post.voted='down';
     post.downvotecount+=1;
     post.upvotecount-=1;
     console.log('change to downvote');
-    refreshPosts();
   }
 }
 
