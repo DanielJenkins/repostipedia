@@ -27,7 +27,11 @@ var newpage = 'empty';
 function loadsegment(theNewpage) {
   newpage = theNewpage;
   if (currentpage===viewpost && newpage!==viewpost){
-    ////Remove eventlisteners on buttons
+    ////Remove Event Listener - Not Removing Currently
+    upvoteBtnLg.removeEventListener('click',viewPostUpvote,false);
+    downvoteBtnLg.removeEventListener('click',viewPostDownvote,false);
+    upvoteBtnXS.removeEventListener('click',viewPostUpvote,false);
+    downvoteBtnXS.removeEventListener('click',viewPostDownvote,false);
 
     /* Removes and re-adds the associated divs
     console.log('clearing vote buttons');
@@ -143,7 +147,7 @@ function viewapost(post) {
   downvoteBtnLg = document.getElementById('downvoteBtnLg');
   upvoteBtnXS = document.getElementById('upvoteBtnXS');
   downvoteBtnXS = document.getElementById('downvoteBtnXS');
-  viewPostUpvote = function(post){
+  viewPostUpvote = function(){
     upvote(post);
     updateViewContents(viewpostupvotecountlg,post.upvotecount);
     updateViewContents(viewpostdownvotecountlg,post.downvotecount);
@@ -151,7 +155,7 @@ function viewapost(post) {
     updateViewContents(viewpostdownvotecountxs,post.downvotecount);
     refreshPosts();
   }
-  viewPostDownvote = function(post){
+  viewPostDownvote = function(){
     downvote(post);
     updateViewContents(viewpostupvotecountlg,post.upvotecount);
     updateViewContents(viewpostdownvotecountlg,post.downvotecount);
@@ -159,10 +163,10 @@ function viewapost(post) {
     updateViewContents(viewpostdownvotecountxs,post.downvotecount);
     refreshPosts();
   }
-  upvoteBtnLg.addEventListener('click',function(){viewPostUpvote(post);},false);
-  downvoteBtnLg.addEventListener('click',function(){viewPostDownvote(post);},false);
-  upvoteBtnXS.addEventListener('click',function(){viewPostUpvote(post);},false);
-  downvoteBtnXS.addEventListener('click',function(){viewPostDownvote(post);},false);
+  upvoteBtnLg.addEventListener('click',viewPostUpvote,false);
+  downvoteBtnLg.addEventListener('click',viewPostDownvote,false);
+  upvoteBtnXS.addEventListener('click',viewPostUpvote,false);
+  downvoteBtnXS.addEventListener('click',viewPostDownvote,false);
   loadsegment(viewpost);
   setHeightOfVotebox();
 }
@@ -259,33 +263,34 @@ generatePosts = function() {
 }
 generatePosts();
 
-function fillPosts() {
-  for (var i = 0; i < postContents.length; i++) {
-    var count=0;
-    postContents[i].documentTitle.appendChild(document.createTextNode(entries[i].title));
-    postContents[i].documentContent.appendChild(document.createTextNode(postContents[i].post.content));
-    var upvotesText=document.createTextNode(' '+postContents[i].post.upvotecount);
-    postContents[i].documentUpvotecount.appendChild(upvotesText);
-    var downvotesText=document.createTextNode(' '+postContents[i].post.downvotecount);
-    postContents[i].documentDownvotecount.appendChild(downvotesText);
-    upvoteViewPosts = function(j) {
-      upvote(j)
-      refreshPosts();
-    }
-    downvoteViewPosts = function(j) {
-      downvote(j)
-      refreshPosts();
-    }
-    addPostListeners = function(k) {
-      postContents[k].documentTitle.addEventListener('click',function() {viewapost(entries[k]);},false);
-      postContents[k].postUpvoteBtn.addEventListener('click',function(){upvoteViewPosts(entries[k]);},false);
-      postContents[k].postDownvoteBtn.addEventListener('click',function() {downvoteViewPosts(entries[k]);},false);
-      count++;
-    }
-    addPostListeners(i);
-  };
+function FillPosts(i) {
+  postContents[i].documentTitle.appendChild(document.createTextNode(entries[i].title));
+  postContents[i].documentContent.appendChild(document.createTextNode(postContents[i].post.content));
+  var upvotesText=document.createTextNode(' '+postContents[i].post.upvotecount);
+  postContents[i].documentUpvotecount.appendChild(upvotesText);
+  var downvotesText=document.createTextNode(' '+postContents[i].post.downvotecount);
+  postContents[i].documentDownvotecount.appendChild(downvotesText);
+  eventViewPost = function() {
+    viewapost(entries[i]);
+  }
+  upvoteViewPosts = function() {
+    console.log(i);
+    upvote(entries[i]);
+    refreshPosts();
+  }
+  downvoteViewPosts = function() {
+    downvote(entries[i]);
+    refreshPosts();
+  }
+  postContents[i].documentTitle.addEventListener('click',eventViewPost,false);
+  postContents[i].postUpvoteBtn.addEventListener('click',upvoteViewPosts,false);
+  postContents[i].postDownvoteBtn.addEventListener('click',downvoteViewPosts,false);
 }
-fillPosts(); 
+var fillpost = [];
+for (var j = 0; j < 10; j++) {
+  fillpost[j] = new FillPosts(j);
+};
+
 
 function refreshPosts() {
   for (var i = 0; i < postContents.length; i++) {
@@ -293,17 +298,27 @@ function refreshPosts() {
     postContents[i].documentContent.removeChild(postContents[i].documentContent.lastChild);
     postContents[i].documentUpvotecount.removeChild(postContents[i].documentUpvotecount.lastChild);
     postContents[i].documentDownvotecount.removeChild(postContents[i].documentDownvotecount.lastChild);
-    removePostListeners = function(k) {
-      ////These aren't removing for some reason
-      postContents[k].documentTitle.removeEventListener('click',function() {viewapost(entries[k]);},false);
-      postContents[k].postUpvoteBtn.removeEventListener('click',function(){upvote(entries[k]);},false);
-      postContents[k].postDownvoteBtn.removeEventListener('click',function() {downvote(entries[k]);},false);
+    eventViewPost = function() {
+    viewapost(entries[i]);
     }
-    removePostListeners(i);
+    upvoteViewPosts = function() {
+      console.log(i);
+      upvote(entries[i]);
+      refreshPosts();
+    }
+    downvoteViewPosts = function() {
+      downvote(entries[i]);
+      refreshPosts();
+    }
+    postContents[i].documentTitle.removeEventListener('click',eventViewPost,false);
+    postContents[i].postUpvoteBtn.removeEventListener('click',upvoteViewPosts,false);
+    postContents[i].postDownvoteBtn.removeEventListener('click',downvoteViewPosts,false);
   };
   compareAllEntries();
   generatePosts();
-  fillPosts();
+  for (var j = 0; j < 10; j++) {
+    fillpost[j] = new FillPosts(j);
+  };
 }
 
 upvote = function(post) {
