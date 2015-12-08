@@ -181,10 +181,10 @@ legend {
 .listbox {
   /*height: 500px;*/
   border: 1px solid #9fb1ca;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   padding: 15px 15px 0px 15px;
   /*overflow: scroll;*/
-  border-radius: 4px;
+  /*border-radius: 4px;*/
   background-color: #9fb1ca;
 }
 .listright {
@@ -330,13 +330,9 @@ legend {
   width: 222px;
   margin-top: 10px;
   opacity: 0.8;
+  border-radius: 4px;
   background-image: url("../images/encyclopediascloseup.jpg");
   background-size: 100%;
-}
-.referenceimagexs {
-  width: 100%;
-  margin-top: 10px;
-  opacity: 0.8;
 }
 .smallspacer {
   height: 20px;
