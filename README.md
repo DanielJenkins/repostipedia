@@ -27,4 +27,4 @@ The purpose of this project is to display layouts and basic formatting technique
 2. Open the `index.html` file in your browser
 
 
-![Repostipedia Homepage](https://s3.amazonaws.com/poly-screenshots.angel.co/Project/22/203425/8103d6bc19bc42419f9070f8bc1d95d7-original.png)
+![Repostipedia Homepage](https://raw.githubusercontent.com/DanielJenkins/repostipedia/master/mockups/frontPage.png)
