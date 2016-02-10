@@ -25,10 +25,20 @@ The purpose of this project is to display layouts and basic formatting technique
 - "Hamburger" navigation menu
 - Fully responsive web design
 
-**To run an Instance of this app, you need to:**
+## To run an Instance of this app, you need to:
 
-1. Download all associated files
-2. Open the `index.html` file in your browser
+**1. Download all associated files**
+**2. Open the `public/index.html` file in your browser**
 
+**Alternatively, you can run this app using node:**
+**1. Download all associated files**
+**2. Install Dependencies**
+- In your terminal window, run `npm install` to install dependencies
+**3. Start Server**
+- Run `node app.js` to start!
+**4. Using the App**
+- Navigate to `http://localhost:3000` in your web browser
 
 ![Repostipedia Homepage](https://raw.githubusercontent.com/DanielJenkins/repostipedia/master/mockups/frontPage.png)
+
+![Repostipedia New Post Page - Mobile Version](https://raw.githubusercontent.com/DanielJenkins/repostipedia/master/mockups/newPost-mobile-screenshot.png)
