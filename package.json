@@ -1,0 +1,22 @@
+{
+  "name": "repostipedia",
+  "version": "1.0.0",
+  "description": "A site for people who want to share and discuss online encyclopedia entries.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJenkins/repostipedia.git"
+  },
+  "author": "Daniel Jenkins <DanielPatrickJenkins@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielJenkins/repostipedia/issues"
+  },
+  "homepage": "https://github.com/DanielJenkins/repostipedia#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
